@@ -13,14 +13,17 @@
 @color-text: @brown;
 
 @color-bg: @whitey;
-@color-main: @whitey;
+@color-main: white;
 @color-aside: @dark-blue;
+@color-aside-toggle: @dark-blue;
+@color-aside-toggle-hover: @darker-blue;
 @color-aside-text: @whitey;
 @color-aside-grad: @dark-blue;
 @color-aside-grad-beg: @dark-blue;
 @color-aside-grad-end: @darker-blue;
 @color-nav-focus: @blue;
 @color-nav-border: @blue;
+@color-tile: @whitey;
 
 // @font-family: "Comic Sans MS", "Comic Sans", cursive;
 @font-family: Roboto, sans-serif;
@@ -68,11 +71,11 @@ a {
     display: block;
     width: 32px;
     height: 32px;
-    background-color: @dark-blue;
+    background-color: @color-aside-toggle;
     border-bottom-right-radius: 100%;
     cursor: pointer;
     > * {
-        color: @dark-white;
+        color: @color-aside-text;
         position: absolute;
             // top: 25%;
             // left: 25%;
@@ -81,7 +84,7 @@ a {
 }
 
 .aside-toggle:hover {
-    background-color: @darker-blue;
+    background-color: @color-aside-toggle-hover;
 }
 
 aside {
@@ -192,7 +195,7 @@ main.active {
 
 .tile {
     padding: 1rem;
-    background-color: @dark-white;
+    background-color: @color-tile;
 }
 
 .tile-name {
