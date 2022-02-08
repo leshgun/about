@@ -24,6 +24,7 @@
 @color-nav-focus: @blue;
 @color-nav-border: @blue;
 @color-tile: @whitey;
+@color-tile-name: @dark-blue;
 
 // @font-family: "Comic Sans MS", "Comic Sans", cursive;
 @font-family: Roboto, sans-serif;
@@ -166,17 +167,23 @@ main {
     background-color: @color-main;
     margin-left: @width-aside;
     // border: 1px dashed @blue;
-    height: 100%;
+    // height: 100%;
     max-width: 90%;
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
+    // flex-direction: column;
+    // gap: 10px;
     > * {
-        flex-basis: 50%;
+        // flex-basis: 50%;
+        max-width: 50%;
+        // flex-grow: 2;
     }
     > :first-child{
-        flex-basis: 100%;
+        // flex-grow: 1;
+        // flex-basis: 100%;
+        max-width: 100%;
     }
     // > :nth-child(1){
     //     border: 3px solid @blue;
@@ -195,35 +202,43 @@ main.active {
 
 .tile {
     padding: 1rem;
-    background-color: @color-tile;
+    > * {
+        background-color: @color-tile;
+    }
+    
 }
 
 .tile-name {
-    background-color: @dark-blue;
+    background-color: @color-tile-name;
     display: inline-block;
     font-size: 1.3rem;
-    margin: 0.5rem 0;
     padding: 0.25rem 1rem;
     color: @whitey;
     width: 15rem;
 }
 
+// .tile-content {
+//     padding: 0 1rem;
+// }
+
 .tile-item {
     display: flex;
     flex-wrap: wrap;
-    > * {
-        padding: 0.5rem;
-        flex-basis: 50%;
-        // border: 1px dashed @gray;
-    }
+    padding: 1rem;
+    border: 1px dashed @gray;
 }
 
 .tile-item_head {
     font-style: italic;
-    > * {
-        display: block;
-    }
-    :first-child {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tile-item_name {
+    max-width: 70%;
+    :first-child{
         font-style: normal;
         font-size: 1rem;
         font-weight: bolder;
@@ -234,21 +249,28 @@ main.active {
 .tile-item_date {
     font-weight: bold;
     font-size: 1rem;
-    text-align: right;
     margin: auto 0;
+
+    // min-inline-size: fit-content;
+    // margin-bottom: 0;
 }
 
 .tile-item_list {
     display: flex;
     flex-direction: column;
-    > :first-child {
-        text-decoration: underline 1px;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    >:first-child {
+        // padding-top: 1rem;
     }
     ul {
         // text-indent: -1rem;
         // padding-left: 1rem;
-        padding-top: 0.25rem;
+        >:first-child {
+            // padding-top: 0.25rem;
+        }
         li:before {
+            padding-right: 0.5rem;
             content: '- ';
         }
     }
