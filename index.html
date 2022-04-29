@@ -5,6 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>It's all about me</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href='https://fonts.googleapis.com/css?family=Iceberg' rel='stylesheet'>
     <link rel="stylesheet/less" type="text/css" href="css/style.less">
     <!-- <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'> -->
     <script src="https://kit.fontawesome.com/a49e836794.js" crossorigin="anonymous"></script>
@@ -12,346 +13,83 @@
     <script src='main.js' defer></script>
 </head>
 <body>
-    <aside>
-        <div class="aside-toggle">
-            <i id="aside-toggle-icon" class="fas fa-arrow-left"></i>
+    <div id="cork-board">
+        <div class="hobby">
+            <img src="img/bike.png">
         </div>
-        <img src="img/kapibara.jpg" alt="Lol...">
-        <nav>
-            <ul>
-                <!-- <li class="nav__item">
-                    <a href="#">About</a>
-                </li> -->
-                <li class="nav__item">
-                    <a href="https://github.com/leshgun/">Projects</a>
-                </li>
-                <li>
-                    <a class="nav__item">Links</i></a>
-                </li>
-                <!-- <li class="nav__item">
-                    <a href="https://habr.com/">Blog</a>
-                </li> -->
-            </ul>
-        </nav>
-        <div class="profile">
-            <!-- <img src="https://vsezhivoe.ru/wp-content/uploads/2021/02/капибара-грызун.jpg"> -->
-            <!-- <img src="https://pbs.twimg.com/media/E1Pt6EiXsAI20wB?format=jpg&name=900x900"> -->
-            <div class="prof-item">
-                <span class="prof-item_name">Имя:</span>
-                <span class="prof-item_value">Нога Алексей Игоревич</span>
-            </div>
-            <div class="prof-item">
-                <span class="prof-item_name">Возраст:</span>
-                <span class="prof-item_value">23</span>
-            </div>
-            <div class="prof-item">
-                <span>Email:</span>
-                <span>nogalexey@gmail.com</span>
-            </div>
-            <div class="prof-item">
-                <span>Город:</span>
-                <span>Калининград</span>
-            </div>
-            <div class="prof-item">
-                <span>Специальность:</span>
-                <span>Специалист по зищите информации / Программист</span>
-            </div>
+        <div id="main-photo">
+            <img src="img/clip.png" class="clip">
+            <img src="img/kapibara.jpg" class="photo">
         </div>
-    </aside>
-    <div id="wrapper">
-        <main>
-            <div class="tile tile-100">
-                <span class="tile-name">Обо мне</span>
-                <div class="tile-content">
-                    <div class="tile-item">
-                        Я - начинающий специалист по защите информации с хорошими 
-                        знаниями в этой области и отличной теоретической базой. 
-                        Ежедневно чему-то новому в области компьютерной 
-                        безопасности. Могу работать как самостоятельно на удалёнке, 
-                        так и в команде в офисе. Умею работать в коллективе и 
-                        склонен к профессиональному развитию.
-                        <br>
-                        <br>
-                        Нахожусь в поиске работы или стажировки в Калининграде, 
-                        но также рассматриваю варианты и удалённой работы.
-                        <br>
-                        <br>
-                        Девиз: "Отличный специалист не тот, кто всё знает, 
-                        а тот, кто знает где это найти".
+    </div>
+    <div class="clipboard">
+        <div class="clipboard-content">
+            <div class="paper">
+                <div class="page">
+                    <div class="page__head">
+                        <div class="title">
+                            <div>Alexey Noga</div>
+                        </div>
+                        <img src="img/me.png">
+                        <div class="about">
+                            <div class="item">
+                                <span class="item-name">Age:</span>
+                                <span class="item-value">23</span>
+                            </div>
+                            <div class="item">
+                                <span class="item-name">City:</span>
+                                <span class="item-value">Kaliningrad</span>
+                            </div>
+                            <div class="item">
+                                <span class="item-name">Languages:</span>
+                                <span class="item-value">Russian (native)</span>
+                            </div>
+                            <div class="item">
+                                <span class="item-name"></span>
+                                <span class="item-value">English (B2-C1)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page__content">
+                        <div class="title">
+                            <span>Skills</span>
+                        </div>
+                        <div class="tiles">
+                            <div class="tile">
+                                <div class="title">
+                                    <span>Web</span>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="title">
+                                    <span>Software Development</span>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="title">
+                                    <span>System & Networking</span>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="title">
+                                    <span>Security</span>
+                                </div>
+                            </div>
+                            <div class="tile">
+                                <div class="title">
+                                    <span>Databases</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page__footer">
+                        <div class="link">Links...</div>
                     </div>
                 </div>
             </div>
-            <div class="tile tile-100">
-                <span class="tile-name">Навыки</span>
-                <div class="tile-content">
-                    <div class="tile-item">
-                        <div class="tile-item_head">
-                            <div class="tile-item_name">
-                                <div>Web</div>
-                            </div>
-                        </div>
-                        <div class="tile-item_list">
-                            Бла-бла-бла
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tile tile-50">
-                <span class="tile-name">Образование</span>
-                <ul class="tile-content">
-                    <li class="tile-item">
-                        <div class="tile-item_head">
-                            <div class="tile-item_name">
-                                <div>
-                                    БФУ им. И. Канта
-                                </div>
-                                <div>
-                                    Компьютерная безопасность
-                                </div>
-                                <div>
-                                    Окончил с отличием
-                                </div>
-                            </div>
-                            <div class="tile-item_date">
-                                2016-2022
-                            </div>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Дисциплины:</span>
-                            <ul>
-                                <li>Математическая логика</li>
-                                <li>Основы информационной безопасности</li>
-                                <li>СУБД</li>
-                                <li>Электроника и схемотехника</li>
-                                <li>Теория кодирования, сжатия и восстановления информации</li>
-                                <li>Модели безопасности компьютерных сетей</li>
-                                <li>Защита в операционных системах</li>
-                                <li>Защита программ и данных</li>
-                                <li>Организационное и правовое обеспечение ИБ</li>
-                                <li>Криптография и криптографические алгоритмы</li>
-                                <li>Криптографические протоколы для защиты банковской информации</li>
-                                <li>Внешний аудит безопасности корпоративных сетей</li>
-                            </ul>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Ключевые особенности:</span>
-                            <ul>
-                                <li>Linux administration</li>
-                                <li>Cisco CCNA-1 и CCNA-2</li>
-                                <li>Oracle DataBase</li>
-                                <li>MSSQL</li>
-                                <li>Python scripts</li>
-                                <li>Sagemath</li>
-                                <li>C/C++</li>
-                                <li>API</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="tile-item">
-                        <div class="tile-item_head">
-                            <div class="tile-item_name">
-                                <div>
-                                    Летняя школа по Компьютерной безопасности
-                                </div>
-                                <div>
-                                    Участник
-                                </div>
-                            </div>
-                            <div class="tile-item_date">
-                                август 2021
-                            </div>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Приобретённые навыки:</span>
-                            <ul>
-                                <li>Организация защищённой сети VipNet</li>
-                                <li>
-                                    Методология тестирования защищённости, 
-                                    мониторинг событий ИБ, 
-                                    SIEM-системы ("Эшелон")
-                                </li>
-                                <li>
-                                    Методы блокировки информации на примере 
-                                    DLP- и DCAM-систем ("Сёрчинформ")
-                                </li>
-                                <li>
-                                    Методы быстрой разработки мобильных 
-                                    приложений и обеспечение информационной 
-                                    безопасности в сфере мобильных технологий 
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Ключевые особенности:</span>
-                            <ul>
-                                <li>Получен сертификат администратора сети VipNet</li>
-                                <li>Участие в олимпиаде "Capture the flag"</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="tile-item">
-                        <div class="tile-item_head">
-                            <div class="tile-item_name">
-                                <div>
-                                    Tensor school
-                                </div>
-                                <div>
-                                    React junior developer
-                                </div>
-                            </div>
-                            <div class="tile-item_date">
-                                май 2020
-                            </div>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Приобретённые навыки:</span>
-                            <ul>
-                                <li>
-                                    Основы языка программирования Java-Script
-                                </li>
-                                <li>
-                                    Работа с фреймворком ReactJS (native)
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Ключевые особенности:</span>
-                            <ul>
-                                <li>
-                                    Создание своего приложения на ReactJS
-                                    для парсинга API сайта, построение
-                                    интерфейса динамического отображения данных
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="tile-item">
-                        <div class="tile-item_head">
-                            <div class="tile-item_name">
-                                <div>
-                                    IT school samsung
-                                </div>
-                                <div>
-                                    Java junior developer
-                                </div>
-                            </div>
-                            <div class="tile-item_date">
-                                2015-2016
-                            </div>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Приобретённые навыки:</span>
-                            <ul>
-                                <li>ООП</li>
-                                <li>Основы синтаксиса языка программирования Java-Script</li>
-                                <li>Работа в Android Studio</li>
-                                <li>Жизненный цикл Android-приложения</li>
-                            </ul>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Ключевые особенности:</span>
-                            <ul>
-                                <li>
-                                    Создание собственного проекта (игры) для мобильного устиройства
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="tile tile-50">
-                <span class="tile-name">Опыт работы</span>
-                <ul class="tile-content">
-                    <li class="tile-item">
-                        <div class="tile-item_head">
-                            <div class="tile-item_name">
-                                <div>
-                                    Системный администратор
-                                </div>
-                                <div>
-                                    МКУ "Спектр"
-                                </div>
-                            </div>
-                            <div class="tile-item_date">
-                                2021-2022
-                            </div>
-                        </div>
-                        <div class="tile-item_list">
-                            <div>
-                                <div>Обязанности:</div>
-                                <ul>
-                                    <li>Мониторинг локальных сетей</li>
-                                    <li>Сопровождение функционирования 
-                                        оконечных и промежуточных устройств</li>
-                                    <li>Установка нового оборудования и ПО</li>
-                                    <li>Работа с ПО государственных органов 
-                                        (gasu.gov.ru, trueconf, ...)</li>
-                                    <li>Установка и поддержание серверов на 
-                                        базе операционной системы 
-                                        Windows Server</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <span>Ключевые достижения:</span>
-                                <ul>
-                                    <li>Внедрение, настройка и сопровождение ПО 
-                                        по защите информации (VipNet, DallasLock, 
-                                        UserGate, ...)</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- <div class="tile-item_list">
-                        </div> -->
-                    </li>
-                </ul>
-            </div>
-            <div class="tile tile-50">
-                <span class="tile-name">Опыт работы</span>
-                <ul class="tile-content">
-                    <li class="tile-item">
-                        <div class="tile-item_head">
-                            <div class="tile-item_name">
-                                <div>
-                                    Системный администратор
-                                </div>
-                                <div>
-                                    МКУ "Спектр"
-                                </div>
-                            </div>
-                            <div class="tile-item_date">
-                                2021-2022
-                            </div>
-                        </div>
-                        <div class="tile-item_list">
-                            <div>
-                                <div>Обязанности:</div>
-                                <ul>
-                                    <li>Мониторинг локальных сетей</li>
-                                    <li>Сопровождение функционирования 
-                                        оконечных и промежуточных устройств</li>
-                                    <li>Установка нового оборудования и ПО</li>
-                                    <li>Работа с ПО государственных органов 
-                                        (gasu.gov.ru, trueconf, ...)</li>
-                                    <li>Установка и поддержание серверов на 
-                                        базе операционной системы 
-                                        Windows Server</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <span>Ключевые достижения:</span>
-                                <ul>
-                                    <li>Внедрение, настройка и сопровождение ПО 
-                                        по защите информации (VipNet, DallasLock, 
-                                        UserGate, ...)</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- <div class="tile-item_list">
-                        </div> -->
-                    </li>
-                </ul>
-            </div>
-        </main>
+            <div class="paper"></div>
+            <div class="paper"></div>
+        </div>
     </div>
 </body>
 </html>

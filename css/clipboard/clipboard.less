@@ -1,0 +1,144 @@
+@import "info-page.less";
+
+@color-white-blue: #abced4;
+@color-white-grey: #eee;
+
+@clipboard-background-image: url("../img/wood-texture.jpg");
+@clipboard-width: 400px;
+@clipboard-height: 600px;
+@clipboard-focus-scale: 3;
+@clipboard-focus-width: @clipboard-width*@clipboard-focus-scale;
+@clipboard-focus-height: @clipboard-height*@clipboard-focus-scale;
+@clipboard-border-width: .5rem;
+@clipboard-border-focus-width: @clipboard-border-width*@clipboard-focus-scale;
+@clipboard-border-radius: 10px;
+
+// @paper-width: @clipboard-focus-width * .9;
+// @paper-height: @clipboard-focus-height * .9;
+@paper-width: 90%;
+@paper-height: 90%;
+// @paper-height: floor(((@clipboard-focus-height * .9) / @grid-line-height)) 
+//     * @grid-line-height;
+
+@red-line-color: @color-white-blue;
+@red-line-left: 10%;
+@red-line-width: .4rem;
+
+@grid-color: @color-white-grey;
+@grid-width: .1rem;
+@grid-line-height: 2rem;
+
+
+
+.clipboard {
+    z-index: 3;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: @clipboard-width;
+    height: @clipboard-height;
+    filter: drop-shadow(0 0 15px black);
+    &.active {
+        filter: blur(0);
+        position: fixed; 
+        overflow-y: scroll;
+        width: auto;
+        height: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(40,40,40, .5);
+        align-items: flex-start;
+        padding: 2rem;
+    }
+}
+
+.clipboard-content:before {
+    background: @clipboard-background-image 0 0 repeat;
+    border-radius: @clipboard-border-radius;
+    content: "";
+    position: absolute;
+    width: @clipboard-height;
+    // max-width: @clipboard-height*@clipboard-focus-scale;
+    height: @clipboard-width;
+    // max-height: @clipboard-width*@clipboard-focus-scale;
+    z-index: -1;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    background-size: cover;
+    background-position: center center;
+}
+
+.clipboard-content {
+    border-radius: @clipboard-border-radius;
+    width: @clipboard-width;
+    height: @clipboard-height;
+    border: @clipboard-border-width solid rgba(0,0,0,.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    // transform: scale(@clipboard-unfocus-scale);
+    transform-origin: top right;
+    // > * {
+    //     display: none;
+    // }
+    >:nth-child(1) {
+        z-index: 3;
+    }
+    >:nth-child(2) {
+        transform: rotate(1deg);
+        z-index: 2;
+    }
+    >:nth-child(3) {
+        transform: rotate(3deg);
+        z-index: 1;
+    }
+    &:not(.active) {
+        .paper {
+            * {display: none;}
+        }
+    }
+    &.active {
+        // > * {
+        //     display: block;
+        // }
+        width: @clipboard-focus-width;
+        height: @clipboard-focus-height;
+        border-width: @clipboard-border-focus-width;
+        // transform: scale(1);
+        // transform-origin: top;
+        // overflow:hidden;
+        // transform: none;
+    }
+    &.active:before {
+        width: @clipboard-focus-height;
+        height: @clipboard-focus-width;
+        // transform: scale(@clipboard-focus-scale);
+    }
+}
+
+.paper {
+    // padding-bottom: @paper-padding-top;
+    width: @paper-width;
+    height: @paper-height;
+    position: absolute;
+    border: 1px rgba(0, 0, 0, .5) outset;
+    // background-color: rgb(255, 250, 213);
+    background-color: #fff;
+    background-image:
+        linear-gradient(
+            90deg, transparent @red-line-left, @red-line-color @red-line-left,
+            @red-line-color (@red-line-left + @red-line-width), 
+            transparent (@red-line-left + @red-line-width)
+        ),
+        linear-gradient(@grid-color @grid-width, transparent @grid-width);
+    background-size: 100% @grid-line-height;
+}
