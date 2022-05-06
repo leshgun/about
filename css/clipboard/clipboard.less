@@ -24,6 +24,10 @@
 // @paper-height: floor(((@clipboard-focus-height * .9) / @grid-line-height)) 
 //     * @grid-line-height;
 
+@bookmarks-width: @red-line-left;
+@bookmarks-font-size: @grid-line-height*.7;
+@bookmarks-top: @grid-line-height*3;
+
 @red-line-color: @color-white-blue;
 @red-line-left: 10%;
 @red-line-width: .4rem;
@@ -179,5 +183,19 @@
     }
     &:not(.active) {
         * {display: none;}
+    }
+}
+
+.bookmarks {
+    position: absolute;
+    top: @bookmarks-top;
+    left: 0;
+    width: @bookmarks-width;
+    font-size: @bookmarks-font-size;
+    border: 5px solid green;
+    >* {
+        height: @grid-line-height;
+        display: flex;
+        align-items: flex-end;
     }
 }

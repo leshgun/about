@@ -10,7 +10,8 @@
 @page-content-title-padding: @grid-line-height;
 @page-content-title-font-size: @grid-line-height*@font-size-scale*1.2;
 
-@footer-height: @grid-line-height*3;
+@footer-height: @grid-line-height*4;
+@footer-padding: @grid-line-height 2rem;
 
 @about-font-size: @grid-line-height*@font-size-scale;
 @about-grid-height: @grid-line-height;
@@ -179,8 +180,8 @@
 .page__footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
+    align-items: flex-end;
+    padding: @footer-padding;
 }
 
 .link {
