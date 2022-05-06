@@ -20,9 +20,10 @@
 // }
 
 const clipboard = document.querySelector(".clipboard");
-const clipboard_content = document.querySelector(".clipboard-content");
+const clipboard_content = clipboard.querySelector(".clipboard__content");
+const clipboard_paper = clipboard.querySelectorAll(".paper");
 const cork_board = document.getElementById("cork-board");
-const activeList = [cork_board, clipboard, clipboard_content];
+const activeList = [cork_board, clipboard, clipboard_content, ...clipboard_paper];
 
 activeList.forEach(x=>x.classList.toggle("active"));
 

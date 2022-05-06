@@ -8,87 +8,275 @@
     <link href='https://fonts.googleapis.com/css?family=Iceberg' rel='stylesheet'>
     <link rel="stylesheet/less" type="text/css" href="css/style.less">
     <!-- <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'> -->
-    <script src="https://kit.fontawesome.com/a49e836794.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5ff3b0221d.js" crossorigin="anonymous"></script>
     <script src="less.js" type="text/javascript"></script>
     <script src='main.js' defer></script>
 </head>
 <body>
     <div id="cork-board">
-        <div class="hobby">
-            <img src="img/bike.png">
-        </div>
-        <div id="main-photo">
-            <img src="img/clip.png" class="clip">
-            <img src="img/kapibara.jpg" class="photo">
-        </div>
-    </div>
-    <div class="clipboard">
-        <div class="clipboard-content">
-            <div class="paper">
-                <div class="page">
-                    <div class="page__head">
-                        <div class="title">
-                            <div>Alexey Noga</div>
+        <div class="wrapper">
+            <div class="hobby">
+                <img src="img/bike.png">
+            </div>
+            <div id="main-photo">
+                <img src="img/clip.png" class="clip">
+                <img src="img/kapibara.jpg" class="photo">
+            </div>
+            <div class="clipboard">
+                <div class="clipboard__content">
+                    <div class="clipboard__clip"></div>
+                    <div class="papers">
+                        <div class="paper">
+                            <div class="page">
+                                <div class="page__head">
+                                    <div class="title">
+                                        <div>Alexey Noga</div>
+                                    </div>
+                                    <img src="img/me.png">
+                                    <div class="about">
+                                        <div class="item">
+                                            <span class="item__name">Age:</span>
+                                            <span class="item__value">23</span>
+                                        </div>
+                                        <div class="item">
+                                            <span class="item__name">City:</span>
+                                            <span class="item__value">Kaliningrad</span>
+                                        </div>
+                                        <div class="item">
+                                            <span class="item__name">Languages:</span>
+                                            <span class="item__value">Russian (native)</span>
+                                        </div>
+                                        <div class="item">
+                                            <span class="item__name"></span>
+                                            <span class="item__value">English (B2-C1)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="page__content">
+                                    <div class="title">
+                                        <span>Skills</span>
+                                    </div>
+                                    <div class="tiles">
+                                        <div class="tile">
+                                            <div class="title">
+                                                <span>Web</span>
+                                            </div>
+                                            <div class="list">
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">HTML5 / CSS3 (less)</div>
+                                                        <div class="item__value">100%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">Java-Script</div>
+                                                        <div class="item__value">90%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value progress-value-90"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">React JS</div>
+                                                        <div class="item__value">80%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value progress-value-80"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">Figma</div>
+                                                        <div class="item__value">80%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value progress-value-80"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">Django</div>
+                                                        <div class="item__value">70%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value progress-value-70"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tile">
+                                            <div class="title">
+                                                <span>Software Development</span>
+                                            </div>
+                                            <div class="list">
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">Python</div>
+                                                        <div class="item__value">100%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">C / C++</div>
+                                                        <div class="item__value">80%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value progress-value-80"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">Java</div>
+                                                        <div class="item__value">60%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value progress-value-60"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tile">
+                                            <div class="title">
+                                                <span>System & Networking</span>
+                                            </div>
+                                            <div class="list">
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">Git / GitHub</div>
+                                                        <div class="item__value">100%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">(Windows / Linux) Administration</div>
+                                                        <div class="item__value">90%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value progress-value-90"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">Cisco</div>
+                                                        <div class="item__value">80%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value progress-value-80"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tile">
+                                            <div class="title">
+                                                <span>Security</span>
+                                            </div>
+                                            <div class="list">
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">HTTP(-S)</div>
+                                                        <div class="item__value">100%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">OWASP top 10</div>
+                                                        <div class="item__value">90%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value progress-value-90"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">VipNet / Dallas Lock / UserGate</div>
+                                                        <div class="item__value">90%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value progress-value-90"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tile">
+                                            <div class="title">
+                                                <span>Databases</span>
+                                            </div>
+                                            <div class="list">
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">SQL</div>
+                                                        <div class="item__value">100%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">Oracle</div>
+                                                        <div class="item__value">90%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value progress-value-90"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">Mssql</div>
+                                                        <div class="item__value">70%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value progress-value-70"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list__item">
+                                                    <div class="item">
+                                                        <div class="item__name">PostgreSQL</div>
+                                                        <div class="item__value">50%</div>
+                                                    </div>
+                                                    <div class="progress">
+                                                        <div class="progress-value progress-value-50"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="page__footer">
+                                    <div class="link">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <a>nogalexey@gmail.com</a>
+                                    </div>
+                                    <div class="link">
+                                        <i class="fa-brands fa-vk"></i>
+                                        <a href="https://vk.com/nogalexey">vk.com/nogalxey</a>
+                                    </div>
+                                    <div class="link">
+                                        <i class="fa-brands fa-github"></i>
+                                        <a href="https://github.com/leshgun">github.com/leshgun</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <img src="img/me.png">
-                        <div class="about">
-                            <div class="item">
-                                <span class="item-name">Age:</span>
-                                <span class="item-value">23</span>
-                            </div>
-                            <div class="item">
-                                <span class="item-name">City:</span>
-                                <span class="item-value">Kaliningrad</span>
-                            </div>
-                            <div class="item">
-                                <span class="item-name">Languages:</span>
-                                <span class="item-value">Russian (native)</span>
-                            </div>
-                            <div class="item">
-                                <span class="item-name"></span>
-                                <span class="item-value">English (B2-C1)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="page__content">
-                        <div class="title">
-                            <span>Skills</span>
-                        </div>
-                        <div class="tiles">
-                            <div class="tile">
-                                <div class="title">
-                                    <span>Web</span>
-                                </div>
-                            </div>
-                            <div class="tile">
-                                <div class="title">
-                                    <span>Software Development</span>
-                                </div>
-                            </div>
-                            <div class="tile">
-                                <div class="title">
-                                    <span>System & Networking</span>
-                                </div>
-                            </div>
-                            <div class="tile">
-                                <div class="title">
-                                    <span>Security</span>
-                                </div>
-                            </div>
-                            <div class="tile">
-                                <div class="title">
-                                    <span>Databases</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="page__footer">
-                        <div class="link">Links...</div>
+                        <div class="paper"></div>
+                        <div class="paper"></div>
                     </div>
                 </div>
             </div>
-            <div class="paper"></div>
-            <div class="paper"></div>
         </div>
     </div>
 </body>

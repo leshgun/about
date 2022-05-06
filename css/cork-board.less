@@ -1,5 +1,8 @@
 @background-image: url("../img/background.png");
 
+@wrapper-width: 1500px;
+@wrapper-padding: 1rem 0;
+
 * {
     padding: 0;
     margin: 0;
@@ -38,11 +41,16 @@ body,html {
     // background-position: center;
     // background-repeat: repeat;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
 
-    &.active {
-        filter: blur(4px);
-    }
-
+.wrapper {
+    padding: @wrapper-padding;
+    width: @wrapper-width;
+    height: 100%;
+    position: relative;
+    border: 3px solid red;
 }
 
 .hobby {
