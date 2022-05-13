@@ -1,19 +1,14 @@
-@page-paddinng-left: @red-line-left;
-
-@font-size-scale: .7;
-
 @head-height: @grid-line-height*11;
 @head-title-font-size: @grid-line-height*@font-size-scale*2;
-@head-title-grid-height: @grid-line-height*4;
+@head-title-grid-height: @grid-line-height*5;
 @head-title-padding-bottom: @grid-line-height - (@grid-line-height * .3);
 
-@page-content-title-padding: @grid-line-height;
-@page-content-title-font-size: @grid-line-height*@font-size-scale*1.2;
+@content-title-padding: @grid-line-height;
+@content-title-font-size: @grid-line-height*@font-size-scale*1.2;
 
 @footer-height: @grid-line-height*4;
 @footer-padding: @grid-line-height 2rem;
 
-@about-font-size: @grid-line-height*@font-size-scale;
 @about-grid-height: @grid-line-height;
 @about-padding-x: 2rem;
 
@@ -27,23 +22,6 @@
 @progress-value-50-color: #eecc00;
 
 
-.grid-line-height {
-    height: @grid-line-height;
-}
-
-.page {
-    width: 100%;
-    height: 100%;
-    padding-left: @page-paddinng-left;
-    font-size: @about-font-size;
-    display: grid;
-    grid-template-rows: @head-height max-content @footer-height;
-    span {
-        height: @grid-line-height;
-        display: inline-flex;
-        align-items: flex-end;
-    }
-}
 
 .page__head {
     // grid-row: 1/15;
@@ -69,28 +47,11 @@
     }
 }
 
-.title {
-    display: flex;
-    justify-content: center;
-    * {
-        margin-top: auto;
-    }
-}
-
 .about {
     padding: 0 @about-padding-x;
     display: grid;
     grid-auto-rows: @about-grid-height;
     grid-template-columns: 1;
-}
-
-.item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    * {
-        margin-top: auto;
-    }
 }
 
 .page__content {
@@ -105,28 +66,10 @@
         height: @grid-line-height;
     }
     >.title {
-        padding: @page-content-title-padding;
+        padding: @content-title-padding;
         // font-weight: 700;
-        font-size: @page-content-title-font-size;
+        font-size: @content-title-font-size;
     }
-}
-
-.tiles {
-    padding-top: @grid-line-height;
-    row-gap: @grid-line-height;
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.tile {
-    flex-shrink: 1;
-    flex-grow: 1;
-    width: 35%;
-    max-width: 50%;
-    padding: 0 1rem;
 }
 
 .progress {
