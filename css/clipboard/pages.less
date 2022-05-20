@@ -1,4 +1,12 @@
 @font-size-scale: .7;
+@glh: @grid-line-height;
+
+@head-height-lines: 5;
+@content-height-lines: 10;
+@footer-height-lines: 1;
+
+
+
 
 @page-paddinng-left: @red-line-left;
 @page-font-size: @grid-line-height*@font-size-scale;
@@ -7,29 +15,19 @@
 @bookmarks-font-size: @grid-line-height*.7;
 @bookmarks-top: @grid-line-height*3;
 
-@head-height: @grid-line-height;
-@head-title-font-size: @grid-line-height*@font-size-scale*2;
+@head-height: @grid-line-height*@head-height-lines;
 @head-title-grid-height: @grid-line-height;
 @head-title-padding-bottom: 0;
 
-@footer-height: @grid-line-height;
+@content-height: @grid-line-height*@content-height-lines;
 
-.page-info {
-    @import "page-info.less";
-}
-
-.page-educ {
-    @import "page-educ.less";
-}
-
-
+@footer-height: @grid-line-height*@footer-height-lines;
 
 .title {
     display: flex;
     justify-content: center;
-    * {
-        margin-top: auto;
-    }
+    align-items: flex-end;
+    height: @glh;
 }
 
 .item {
@@ -41,8 +39,20 @@
     }
 }
 
+.el, .empty-line {
+    display: block;
+    width: 100%;
+    height: @glh;
+    content: "";
+}
+
+.fsx2, .font-size-x2 {
+    font-size: @page-font-size*2;
+    height: @grid-line-height*2;
+}
+
 .page span {
-    height: @grid-line-height;
+    height: @glh;
     display: inline-flex;
     align-items: flex-end;
 }
@@ -57,7 +67,7 @@
     width: @bookmarks-width;
     font-size: @bookmarks-font-size;
     >* {
-        height: @grid-line-height;
+        height: @glh;
         display: flex;
         align-items: flex-end;
     }
@@ -77,7 +87,8 @@
     padding-left: @page-paddinng-left;
     font-size: @page-font-size;
     display: grid;
-    grid-template-rows: @head-height max-content @footer-height;
+    grid-template-rows: @head-height @content-height @footer-height;
+    align-items: flex-start;
     &:not(.active) {
         display: none;
     }
@@ -104,8 +115,8 @@
 }
 
 .tiles {
-    padding-top: @grid-line-height;
-    row-gap: @grid-line-height;
+    padding-top: @glh;
+    row-gap: @glh;
     padding: 0 1rem;
     display: flex;
     flex-direction: row;
@@ -119,4 +130,16 @@
     width: 35%;
     max-width: 50%;
     padding: 0 1rem;
+}
+
+
+
+
+
+.page-info {
+    @import "page-info.less";
+}
+
+.page-educ {
+    @import "page-educ.less";
 }

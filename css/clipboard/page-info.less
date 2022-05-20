@@ -1,4 +1,8 @@
-@head-height: @grid-line-height*11;
+@head-height-lines: 11;
+@content-height-lines: 15;
+@footer-height-lines: 1;
+
+// @head-height: @grid-line-height*11;
 @head-title-font-size: @grid-line-height*@font-size-scale*2;
 @head-title-grid-height: @grid-line-height*5;
 @head-title-padding-bottom: @grid-line-height - (@grid-line-height * .3);
@@ -6,7 +10,7 @@
 @content-title-padding: @grid-line-height;
 @content-title-font-size: @grid-line-height*@font-size-scale*1.2;
 
-@footer-height: @grid-line-height*4;
+// @footer-height: @grid-line-height*4;
 @footer-padding: @grid-line-height 2rem;
 
 @about-grid-height: @grid-line-height;
@@ -22,6 +26,11 @@
 @progress-value-50-color: #eecc00;
 
 
+
+&.page {
+    display: grid;
+    grid-template-rows: @head-height @content-height @footer-height;
+}
 
 .page__head {
     // grid-row: 1/15;
