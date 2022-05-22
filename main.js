@@ -29,6 +29,8 @@ function switchClipboardPage() {
             const bmType = bm.id.substring(3);
             document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
             document.querySelector(".page-" + bmType).classList.add("active");
+            bookmarks.forEach(x=>x.classList.remove("active"));
+            bm.classList.add("active");
         })
     })
 }
