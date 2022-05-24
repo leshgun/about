@@ -22,35 +22,13 @@
 @progress-value-70-color: #d1e302;
 @progress-value-60-color: #e3da02;
 @progress-value-50-color: #eecc00;
+@progress-value-0-color: #ee6b00;
 
 
 
-&.page {
-    display: grid;
-    grid-template-rows: @head-height @content-height @footer-height;
-    padding-top: 0;
-}
 
-.page__head {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: @head-title-grid-height auto;
-    .title {
-        grid-column: 1/3;
-        grid-row: 1;
-        // font-size: @head-title-font-size;
-        margin-top: @head-title-margin-top;
-    }
-    img {
-        grid-column: 3;
-        grid-row: 1/3;
-        padding-top: 1rem;
-        justify-self: center;
-    }
-    .about {
-        grid-column: 1/3;
-        grid-row: 2;
-    }
-}
+
+//---------- REUSABLES ----------//
 
 .about {
     padding: 0 @about-padding-x;
@@ -59,8 +37,29 @@
     grid-template-columns: 1;
 }
 
+//---------- REUSABLES ----------//
+//---------- BODY ----------//
+
+&.page {
+    display: grid;
+}
+
+.page__head {
+    grid-template-columns: repeat(3, 1fr);
+    img {
+        max-width: 80%;
+        grid-column: 3;
+        grid-row: 1/3;
+        align-self: flex-start;
+        justify-self: center;
+        transform: translateY(-@glh) rotate(-.5deg);
+    }
+    .about {
+        grid-column: 1/3;
+    }
+}
+
 .page__content {
-    // grid-row: 15/auto;
     .list {
         font-size: @tile-list-font-size;
     }
@@ -72,10 +71,26 @@
     }
     >.title {
         padding: @content-title-padding;
-        // font-weight: 700;
         font-size: @content-title-font-size;
     }
 }
+
+.page__footer {
+    height: @footer-height;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    .link {
+        height: @grid-line-height;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: .5rem;
+    }
+}
+
+//---------- BODY ----------//
+//---------- PROGRESS BAR ----------//
 
 .progress {
     background: rgba(0,0,0,0.1);
@@ -98,78 +113,59 @@
 .progress-value-90 {
     animation-name: load-90;
     background: @progress-value-90-color;
-    width: 90%;
 }
 
 .progress-value-80 {
     animation-name: load-80;
     background: @progress-value-80-color;
-    width: 80%;
 }
 
 .progress-value-70 {
     animation-name: load-70;
     background: @progress-value-70-color;
-    width: 70%;
 }
 
 .progress-value-60 {
     animation-name: load-60;
     background: @progress-value-60-color;
-    width: 60%;
 }
 
 .progress-value-50 {
     animation-name: load-50;
     background: @progress-value-50-color;
-    width: 50%;
 }
 
-.page__footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-}
-
-.link {
-    height: @grid-line-height;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: .5rem;
-}
-
-
+//---------- PROGRESS BAR ----------//
 //---------- ANIMATIONS ----------//
 
 @keyframes load {
-    0% { width: 0; }
-    100% { 
-        width: 100%; 
-    }
+    0% { width: 0; background-color: @progress-value-0-color; }
+    100% { width: 100%; }
 }
 
 @keyframes load-90 {
-    0% { width: 0; }
+    0% { width: 0; background-color: @progress-value-0-color; }
     100% { width: 90%; }
 }
 
 @keyframes load-80 {
-    0% { width: 0; }
+    0% { width: 0; background-color: @progress-value-0-color; }
     100% { width: 80%; }
 }
 
 @keyframes load-70 {
-    0% { width: 0; }
+    0% { width: 0; background-color: @progress-value-0-color; }
     100% { width: 70%; }
 }
 
 @keyframes load-60 {
-    0% { width: 0; }
+    0% { width: 0; background-color: @progress-value-0-color; }
     100% { width: 60%; }
 }
 
 @keyframes load-50 {
-    0% { width: 0; }
+    0% { width: 0; background-color: @progress-value-0-color; }
     100% { width: 50%; }
 }
+
+//---------- ANIMATIONS ----------//

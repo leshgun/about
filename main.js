@@ -2,13 +2,14 @@ const clipboard = document.querySelector(".clipboard");
 const clipboard_content = clipboard.querySelector(".clipboard__content");
 const clipboard_paper = clipboard.querySelectorAll(".paper");
 const cork_board = document.getElementById("cork-board");
+const root = document.getElementById("root");
 
 const bookmarks = document.querySelectorAll(".bm");
 // const bm_info = bookmarks.querySelector(".info");
 // const bm_work = bookmarks.querySelector(".work");
 // const bm_educ = bookmarks.querySelector(".educ");
 
-const clipboadrdActiveList = [cork_board, clipboard, clipboard_content, ...clipboard_paper];
+const clipboadrdActiveList = [root, clipboard, clipboard_content, ...clipboard_paper];
 
 clipboadrdActiveList.forEach(x=>x.classList.toggle("active"));
 
