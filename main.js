@@ -1,55 +1,82 @@
+const cork_board = document.getElementById("cork_board");
+const hobby = document.querySelector(".hobby");
 const clipboard = document.querySelector(".clipboard");
 const clipboard_content = clipboard.querySelector(".clipboard__content");
-const clipboard_paper = clipboard.querySelectorAll(".paper");
-const cork_board = document.getElementById("cork-board");
-const root = document.getElementById("root");
-
+const clipboard_papers = clipboard.querySelectorAll(".paper");
 const bookmarks = document.querySelectorAll(".bm");
-// const bm_info = bookmarks.querySelector(".info");
-// const bm_work = bookmarks.querySelector(".work");
-// const bm_educ = bookmarks.querySelector(".educ");
+const pages = clipboard.querySelectorAll(".page");
+const bookmarksAndPages = [...bookmarks].reduce((a, bm, i) => {
+    return {...a, [bm.id]: pages[i]}
+}, {})
 
-const clipboadrdActiveList = [root, clipboard, clipboard_content, ...clipboard_paper];
+const clipboadrdActiveList = [clipboard, clipboard_content, ...clipboard_papers];
+const blurList = [cork_board, hobby, main_photo, clipboard]
 
-clipboadrdActiveList.forEach(x=>x.classList.toggle("active"));
 
-function toggleActive2(event) {
-    console.log(event)
-    console.log(event.currentTarget.toogleList)
-    // event.currentTarget.toogleList.forEach(
-    //     x => event.currentTarget
-    // )
+
+function toggleActive(node) {
+    node.classList.toggle("active");
 }
 
-function switchClipboardPage() {
-    // for (let i = 0; i < bookmarks.length; i++) {
-        
-    // }
-    bookmarks.forEach(bm => {
-        bm.addEventListener("click", () => {
-            const bmType = bm.id.substring(3);
-            document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
-            document.querySelector(".page-" + bmType).classList.add("active");
-            bookmarks.forEach(x=>x.classList.remove("active"));
-            bm.classList.add("active");
-        })
+/**
+ * Add blur-filter to blurList-elements, except "node"
+ * @param {DOM-element} node 
+ */
+function blurOther(node) {
+    blurList.forEach(n => {
+        console.log(n)
+        if (n != node) node.classList.toggle("blur")
     })
 }
 
-function toggleActive() {
-    console.log("Clipboard has been pressed...");
-    clipboadrdActiveList.forEach(x=>x.classList.toggle("active"));
+/**
+ * Prevents propagation
+ * @param {DOM-element} event 
+ * @param {Event from EventListener} event 
+ */
+function stopPropogation(parent_node, event) {
+    if (parent_node.classList.contains('active'))
+        event.stopPropagation();
 }
 
+/**
+ * Add class "active" to the pressed node and its dependences
+ * @param {DOM-element} node 
+ * @param {DOM-element} dependent_node 
+ */
+function bookmarkActivate(node, dependent_node) {
+    // const bmType = bm.id.substring(3);
+    bookmarks.forEach(b => b.classList.remove("active"));
+    pages.forEach(p => p.classList.remove("active"));
+    node.classList.add("active")
+    dependent_node.classList.add("active");
+}
 
-clipboard.addEventListener("click", toggleActive);
+/**
+ * 
+ */
+function switchClipboardPage() {
+    bookmarks.forEach(bm => {
+        bm.addEventListener("click", () => {
+            bookmarkActivate(bm, bookmarksAndPages[bm.id])
+        })
+    });
+}
 
-clipboard_content.addEventListener("click", e => {
-    if (clipboard.classList.contains('active')) e.stopPropagation()
-})
+/**
+ * Popup clipboard when click
+ */
+function clipboardActivate() {
+    blurOther(clipboard);
+    clipboadrdActiveList.forEach(toggleActive);
+    clipboard_content.addEventListener("click", 
+        e => stopPropogation(clipboard, e));
+    bookmarkActivate(bookmarks[0], pages[0])
+}
 
-// bookmarks.addEventListener("click", toggleActive2);
-// bookmarks.toogleList = [".info", ".work", ".educ"]
+function main() {
+    clipboard.addEventListener("click", clipboardActivate);
+    switchClipboardPage()
+}
 
-switchClipboardPage()
-
+main()
