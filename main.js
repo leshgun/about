@@ -1,3 +1,5 @@
+'use strict'
+
 const cork_board = document.getElementById("cork_board");
 const hobby = document.querySelector(".hobby");
 const clipboard = document.querySelector(".clipboard");
@@ -6,14 +8,16 @@ const clipboard_papers = clipboard.querySelectorAll(".paper");
 const bookmarks = document.querySelectorAll(".bm");
 const pages = clipboard.querySelectorAll(".page");
 const bookmarksAndPages = [...bookmarks].reduce((a, bm, i) => {
-    return {...a, [bm.id]: pages[i]}
+    return {...a, [bm.id]: pages[i].id}
 }, {})
 
 const clipboadrdActiveList = [clipboard, clipboard_content, ...clipboard_papers];
 const blurList = [cork_board, hobby, main_photo, clipboard]
 
 
-
+/**
+ * @param {DOM-element} node 
+ */
 function toggleActive(node) {
     node.classList.toggle("active");
 }
@@ -24,59 +28,56 @@ function toggleActive(node) {
  */
 function blurOther(node) {
     blurList.forEach(n => {
-        console.log(n)
-        if (n != node) node.classList.toggle("blur")
+        if (n != node) n.classList.toggle("blur")
     })
 }
 
 /**
- * Prevents propagation
- * @param {DOM-element} event 
- * @param {Event from EventListener} event 
- */
-function stopPropogation(parent_node, event) {
-    if (parent_node.classList.contains('active'))
-        event.stopPropagation();
-}
-
-/**
- * Add class "active" to the pressed node and its dependences
+ * Activate "node" and deactivate other in "list"
  * @param {DOM-element} node 
- * @param {DOM-element} dependent_node 
+ * @param {Array of the DOM-elements} list 
  */
-function bookmarkActivate(node, dependent_node) {
-    // const bmType = bm.id.substring(3);
-    bookmarks.forEach(b => b.classList.remove("active"));
-    pages.forEach(p => p.classList.remove("active"));
-    node.classList.add("active")
-    dependent_node.classList.add("active");
+function deactivateOther(node, list) {
+    list.forEach(le => le.classList.remove("active"));
+    node.classList.add("active");
 }
 
 /**
- * 
+ * Add class "active" to the pressed bookmark and page
+ * @param {DOM-element} bm 
+ * @param {DOM-element} page
  */
-function switchClipboardPage() {
-    bookmarks.forEach(bm => {
-        bm.addEventListener("click", () => {
-            bookmarkActivate(bm, bookmarksAndPages[bm.id])
-        })
-    });
+ function clipboardBookmarkSwitch(bm=0, page=0) {
+    // const bmType = bm.id.substring(3);
+    bm = bm ? bm : bookmarks[0];
+    page = page ? page : pages[0];
+    deactivateOther(bm, bookmarks);
+    deactivateOther(page, pages);
 }
 
 /**
  * Popup clipboard when click
  */
 function clipboardActivate() {
-    blurOther(clipboard);
-    clipboadrdActiveList.forEach(toggleActive);
-    clipboard_content.addEventListener("click", 
-        e => stopPropogation(clipboard, e));
-    bookmarkActivate(bookmarks[0], pages[0])
+    clipboard.addEventListener("click", () => {
+        blurOther(clipboard);
+        clipboadrdActiveList.forEach(toggleActive);
+        clipboard_content.addEventListener("click", e => {
+            if (clipboard.classList.contains('active')) 
+                e.stopPropagation();
+        });
+    });
+    bookmarks.forEach(bm => {
+        bm.addEventListener("click", () => {
+            const page = pages.getElementById(bookmarksAndPages[bm.id])
+            clipboardBookmarkSwitch(bm, page);
+        })
+    });
+    clipboardBookmarkSwitch()
 }
-
+    
 function main() {
-    clipboard.addEventListener("click", clipboardActivate);
-    switchClipboardPage()
+    clipboardActivate();
 }
 
 main()
