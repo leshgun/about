@@ -10,6 +10,7 @@ const pages = clipboard.querySelectorAll(".page");
 const bookmarksAndPages = [...bookmarks].reduce((a, bm, i) => {
     return {...a, [bm.id]: pages[i].id}
 }, {})
+const initialPage = [bookmarks[0], pages[0]]
 
 const clipboadrdActiveList = [clipboard, clipboard_content, ...clipboard_papers];
 const blurList = [cork_board, hobby, main_photo, clipboard]
@@ -26,7 +27,7 @@ function toggleActive(node) {
  * Add blur-filter to blurList-elements, except "node"
  * @param {DOM-element} node 
  */
-function blurOther(node) {
+function blurOther(node, blurList) {
     blurList.forEach(n => {
         if (n != node) n.classList.toggle("blur")
     })
@@ -47,10 +48,9 @@ function deactivateOther(node, list) {
  * @param {DOM-element} bm 
  * @param {DOM-element} page
  */
- function clipboardBookmarkSwitch(bm=0, page=0) {
+ function clipboardBookmarkSwitch(bm, page) {
+    if (!(bm || page)) [bm, page] = initialPage; 
     // const bmType = bm.id.substring(3);
-    bm = bm ? bm : bookmarks[0];
-    page = page ? page : pages[0];
     deactivateOther(bm, bookmarks);
     deactivateOther(page, pages);
 }
@@ -60,18 +60,18 @@ function deactivateOther(node, list) {
  */
 function clipboardActivate() {
     clipboard.addEventListener("click", () => {
-        blurOther(clipboard);
+        blurOther(clipboard, blurList);
         clipboadrdActiveList.forEach(toggleActive);
-        clipboard_content.addEventListener("click", e => {
-            if (clipboard.classList.contains('active')) 
-                e.stopPropagation();
-        });
     });
     bookmarks.forEach(bm => {
         bm.addEventListener("click", () => {
-            const page = pages.getElementById(bookmarksAndPages[bm.id])
+            const page = document.getElementById(bookmarksAndPages[bm.id])
             clipboardBookmarkSwitch(bm, page);
         })
+    });
+    clipboard_content.addEventListener("click", e => {
+        if (clipboard.classList.contains('active')) 
+            e.stopPropagation();
     });
     clipboardBookmarkSwitch()
 }
