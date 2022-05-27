@@ -14,7 +14,7 @@
 @clipboard-border-width: .5rem;
 // @clipboard-border-focus-width: @clipboard-border-width*@clipboard-focus-scale;
 @clipboard-border-focus-width: 1rem;
-@clipboard-border-radius: 10px;
+@clipboard-border-radius: .5rem;
 
 @papers-padding-top: 5%;
 // @paper-width: @clipboard-focus-width * .9;
@@ -34,6 +34,20 @@
 @grid-line-unfocus-height: 1rem;
 
 
+//---------- REUSEABLE ----------//
+
+.rotate_90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+//---------- REUSEABLE ----------//
+
+
+
 
 .clipboard {
     z-index: 3;
@@ -47,7 +61,6 @@
     height: @clipboard-height;
     filter: drop-shadow(0 0 15px black);
     &.active {
-        filter: blur(0);
         position: fixed; 
         overflow-y: scroll;
         width: auto;
@@ -59,59 +72,44 @@
         background: rgba(40,40,40, .5);
         align-items: flex-start;
         padding: 2rem;
+        .clipboard__background {
+            width: @clipboard-focus-height;
+            height: @clipboard-focus-width;
+        }
+        .clipboard__content {
+            width: @clipboard-focus-width;
+            height: @clipboard-focus-height;
+            border-width: @clipboard-border-focus-width;
+        }
     }
 }
 
-
-.clipboard__content:before {
-    background: @clipboard-background-image 0 0 repeat;
-    border-radius: @clipboard-border-radius;
-    content: "";
-    position: absolute;
-    width: @clipboard-height;
-    // max-width: @clipboard-height*@clipboard-focus-scale;
-    height: @clipboard-width;
-    // max-height: @clipboard-width*@clipboard-focus-scale;
-    z-index: -1;
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    transform: rotate(90deg);
-    background-size: cover;
-    background-position: center center;
-}
-
 .clipboard__content {
-    border-radius: @clipboard-border-radius;
     width: @clipboard-width;
     height: @clipboard-height;
-    border: @clipboard-border-width solid rgba(0,0,0,.3);
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    // transform: scale(@clipboard-unfocus-scale);
     transform-origin: top right;
-    // > * {
-    //     display: none;
-    // }
-    &.active {
-        // > * {
-        //     display: block;
-        // }
-        width: @clipboard-focus-width;
-        height: @clipboard-focus-height;
-        border-width: @clipboard-border-focus-width;
-        // transform: scale(1);
-        // transform-origin: top;
-        // overflow:hidden;
-        // transform: none;
-    }
-    &.active:before {
-        width: @clipboard-focus-height;
-        height: @clipboard-focus-width;
-        // transform: scale(@clipboard-focus-scale);
+    
+    overflow: hidden;
+    .clipboard__background {
+        content: "";
+        background-image: @clipboard-background-image;
+        width: @clipboard-height;
+        height: @clipboard-width;
+        border-radius: @clipboard-border-radius;
+        position: absolute;
+        z-index: -1;
+        background-size: cover;
+        background-position: center center;
+        .border {
+            width: 100%;
+            height: 100%;
+            border: @clipboard-border-width solid rgba(0,0,0,.3);
+            border-radius: @clipboard-border-radius;
+        }
     }
 }
 
@@ -140,8 +138,9 @@
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    // align-items: flex-start;
     padding-top: @papers-padding-top;
+
     >:nth-child(1) {
         z-index: 3;
     }
