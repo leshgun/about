@@ -90,6 +90,7 @@
 
 .bookmarks {
     position: absolute;
+    height: 50%;
     top: @bookmarks-top;
     left: 0;
     width: @bookmarks-width;
@@ -122,12 +123,15 @@
     }
     #bm_info {
         background-color: @bookmarks-color-info;
+        top: 0;
     }
     #bm_educ {
         background-color: @bookmarks-color-educ;
+        top: 10%;
     }
     #bm_work {
         background-color: @bookmarks-color-work;
+        top: 20%;
     }
 }
 
@@ -209,6 +213,36 @@
 }
 
 //---------- BODY ----------//
+//---------- MEDIA ----------//
+
+@media screen and (max-width: @media_max-width_1){
+    .bookmarks {
+        font-size: @bookmarks-font-size;
+        gap: 0;
+        .bm {
+            width: 100%;
+            transform: none;
+            height: @glh;
+            padding-left: .2rem;
+            justify-content: right;
+            &.active {
+                width: 100%;
+                transform: none;
+            }
+            &:not(.active) {
+                background: repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 4px,
+                    white 4px,
+                    white 12px
+                );
+            }
+        }
+    }
+}
+
+//---------- MEDIA ----------//
 //---------- IMPORTS (ENCAPSULATED) ----------//
 
 #page_info {
