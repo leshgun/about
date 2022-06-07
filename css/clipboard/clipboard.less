@@ -8,9 +8,9 @@
 @clipboard-clip-image: url("../img/wood-texture.jpg");
 @clipboard-width: 400px;
 @clipboard-height: 600px;
-// @clipboard-focus-scale: 3;
 // @clipboard-focus-width: @clipboard-width*@clipboard-focus-scale;
 // @clipboard-focus-height: @clipboard-height*@clipboard-focus-scale;
+// @clipboard-focus-scale: 3;
 @clipboard-focus-width: 1200px;
 @clipboard-focus-height: 1400px;
 @clipboard-border-width: .3rem;
@@ -29,8 +29,12 @@
 //     * @grid-line-height;
 
 @red-line-color: @color-white-blue;
-@red-line-left: 10%;
-@red-line-width: .4rem;
+@red-line-left: 40px;
+@red-line-focus-left: 100px;
+@red-line-width: 2px;
+@red-line-focus-width: 6px;
+@red-line-left-media-1: 100px;
+@red-line-width-media-1: 100px;
 
 @grid-color: @color-white-grey;
 @grid-width: .1rem;
@@ -39,6 +43,7 @@
 
 @media_max-width_1: 1300px;
 @media_max-width_2: 1100px;
+@media_max-width_3: 1100px;
 
 
 //---------- REUSEABLE ----------//
@@ -168,6 +173,12 @@
     background-size: 100% @grid-line-unfocus-height;
     &.active {
         background-size: 100% @grid-line-height;
+        background-image: linear-gradient(
+            90deg, transparent @red-line-focus-left, @red-line-color @red-line-focus-left,
+                @red-line-color (@red-line-focus-left + @red-line-width), 
+                transparent (@red-line-focus-left + @red-line-width)
+            ),
+            linear-gradient(@grid-color @grid-width, transparent @grid-width);
         &:first-child {
             height: auto;
         }
@@ -194,9 +205,11 @@
 @media screen and (max-width: @media_max-width_2) {
     .paper {
         background-image: linear-gradient(
-            90deg, transparent @red-line-left, @red-line-color @red-line-left,
-                @red-line-color (@red-line-left + @red-line-width), 
-                transparent (@red-line-left + @red-line-width)
+                90deg, 
+                transparent @red-line-left-media-1, 
+                @red-line-color @red-line-left-media-1,
+                @red-line-color (@red-line-left-media-1 + @red-line-width), 
+                transparent (@red-line-left-media-1 + @red-line-width)
             ),
             linear-gradient(@grid-color @grid-width, transparent @grid-width);
         &.active {
