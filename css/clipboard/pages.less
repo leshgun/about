@@ -6,6 +6,7 @@
 @footer-height-lines: 1;
 
 @red-line: @red-line-focus-left;
+@red-line-media-1: @red-line-focus-left-media-1;
 
 
 @page-padding-top: @grid-line-height*2;
@@ -60,10 +61,6 @@
 .fsx2, .font-size-x2 {
     font-size: @page-font-size*2;
     height: @glh*2;
-}
-
-.fs1x3, .font-size-1x3 {
-    
 }
 
 .col-gap-1, .cg1 {
@@ -242,6 +239,23 @@
         }
     }
 }
+
+@media screen and (max-width: @media_max-width_1){
+    .page {
+        padding-left: @red-line-media-1;
+    }
+    .bookmarks {
+        width: @red-line-media-1;
+        .bm span {
+            font-size: 0;
+            &::first-letter {
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+
 
 //---------- MEDIA ----------//
 //---------- IMPORTS (ENCAPSULATED) ----------//

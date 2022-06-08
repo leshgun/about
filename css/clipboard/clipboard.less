@@ -30,11 +30,10 @@
 
 @red-line-color: @color-white-blue;
 @red-line-left: 40px;
-@red-line-focus-left: 100px;
 @red-line-width: 2px;
+@red-line-focus-left: 100px;
 @red-line-focus-width: 6px;
-@red-line-left-media-1: 100px;
-@red-line-width-media-1: 100px;
+@red-line-focus-left-media-1: 50px;
 
 @grid-color: @color-white-grey;
 @grid-width: .1rem;
@@ -43,7 +42,7 @@
 
 @media_max-width_1: 1300px;
 @media_max-width_2: 1100px;
-@media_max-width_3: 1100px;
+@media_max-width_3: 900px;
 
 
 //---------- REUSEABLE ----------//
@@ -164,12 +163,18 @@
     border: 1px rgba(0, 0, 0, .5) outset;
     // background-color: rgb(255, 250, 213);
     background-color: #fff;
-    background-image: linear-gradient(
-        90deg, transparent @red-line-left, @red-line-color @red-line-left,
+    background-image:
+        linear-gradient(
+            90deg, 
+            transparent @red-line-left, 
+            @red-line-color @red-line-left,
             @red-line-color (@red-line-left + @red-line-width), 
             transparent (@red-line-left + @red-line-width)
         ),
-        linear-gradient(@grid-color @grid-width, transparent @grid-width);
+        linear-gradient(
+            @grid-color @grid-width, 
+            transparent @grid-width
+        );
     background-size: 100% @grid-line-unfocus-height;
     &.active {
         background-size: 100% @grid-line-height;
@@ -194,7 +199,7 @@
 @media screen and (max-width: @media_max-width_1){
     .clipboard {
         &.active {
-            padding: 0;
+            padding: 1rem;
             .clipboard__content {
                 width: 100%;
             }
@@ -204,15 +209,19 @@
 
 @media screen and (max-width: @media_max-width_2) {
     .paper {
-        background-image: linear-gradient(
-                90deg, 
-                transparent @red-line-left-media-1, 
-                @red-line-color @red-line-left-media-1,
-                @red-line-color (@red-line-left-media-1 + @red-line-width), 
-                transparent (@red-line-left-media-1 + @red-line-width)
-            ),
-            linear-gradient(@grid-color @grid-width, transparent @grid-width);
         &.active {
+            background-image:
+                linear-gradient(
+                    90deg, 
+                    transparent @red-line-focus-left-media-1, 
+                    @red-line-color @red-line-focus-left-media-1,
+                    @red-line-color (@red-line-focus-left-media-1 + @red-line-width), 
+                    transparent (@red-line-focus-left-media-1 + @red-line-width)
+                ),
+                linear-gradient(
+                    @grid-color @grid-width, 
+                    transparent @grid-width
+                );
             width: 90%;
         }
     }
