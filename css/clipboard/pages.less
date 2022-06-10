@@ -77,30 +77,16 @@
     transform: translateX(.6rem);
 }
 
-.page span {
-    height: @glh;
-    display: inline-flex;
-    align-items: flex-end;
-}
-
 //---------- REUSABLES ----------//
 //---------- BODY ----------//
 
 .bookmarks {
     position: absolute;
     height: 50%;
-    top: @bookmarks-top;
     left: 0;
+    top: @bookmarks-top;
     width: @bookmarks-width;
     font-size: 1.5*@bookmarks-font-size;
-    >* {
-        height: 2*@glh;
-        display: flex;
-        align-items: flex-end;
-    }
-    .bm:hover {
-        background-color: rgba(0, 0, 0, .1);
-    }
     .title {
         display: flex;
         justify-content: left;
@@ -108,6 +94,10 @@
     }
     .bm {
         cursor: pointer;
+        height: 2*@glh;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
         width: 100%;
         padding-left: 1rem;
         transform: translateX(-100%);
@@ -119,17 +109,17 @@
             transform: translateX(-50%);
         }
     }
+    .bm:hover {
+        background-color: rgba(0, 0, 0, .1);
+    }
     #bm_info {
         background-color: @bookmarks-color-info;
-        top: 0;
     }
     #bm_educ {
         background-color: @bookmarks-color-educ;
-        top: 10%;
     }
     #bm_work {
         background-color: @bookmarks-color-work;
-        top: 20%;
     }
 }
 
@@ -246,12 +236,9 @@
     }
     .bookmarks {
         width: @red-line-media-1;
-        .bm span {
-            font-size: 0;
-            &::first-letter {
-                font-size: 10px;
-            }
-        }
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 }
 
