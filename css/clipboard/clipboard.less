@@ -11,7 +11,7 @@
 // @clipboard-focus-width: @clipboard-width*@clipboard-focus-scale;
 // @clipboard-focus-height: @clipboard-height*@clipboard-focus-scale;
 // @clipboard-focus-scale: 3;
-@clipboard-focus-width: 1200px;
+@clipboard-focus-width: 1000px;
 @clipboard-focus-height: 1400px;
 @clipboard-border-width: .3rem;
 // @clipboard-border-focus-width: @clipboard-border-width*@clipboard-focus-scale;
@@ -29,7 +29,7 @@
 //     * @grid-line-height;
 
 @red-line-color: @color-white-blue;
-@red-line-left: 40px;
+@red-line-left: 60px;
 @red-line-width: 2px;
 @red-line-focus-left: 100px;
 @red-line-focus-width: 6px;
@@ -53,6 +53,12 @@
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     transform: rotate(90deg);
+}
+
+.lh1, .line-height-1 {
+    height: @glh;
+    display: inline-flex;
+    align-items: flex-end;
 }
 
 //---------- REUSEABLE ----------//
@@ -202,12 +208,13 @@
             padding: 1rem;
             .clipboard__content {
                 width: 100%;
+                min-height: 100%;
             }
         }
     }
 }
 
-@media screen and (max-width: @media_max-width_2) {
+@media screen and (max-width: @media_max-width_1) {
     .paper {
         &.active {
             background-image:
