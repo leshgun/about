@@ -40,9 +40,12 @@
 @grid-line-height: 2rem;
 @grid-line-unfocus-height: 1rem;
 
+@name-font-size: 300%;
+
 @media_max-width_1: 1300px;
 @media_max-width_2: 1100px;
-@media_max-width_3: 900px;
+@media_max-width_3: 800px;
+@media_max-width_4: 500px;
 
 
 //---------- REUSEABLE ----------//
@@ -93,6 +96,9 @@
         .clipboard__content {
             width: @clipboard-focus-width;
             height: @clipboard-focus-height;
+        }
+        .clipboard__name {
+            display: none;
         }
     }
 }
@@ -199,13 +205,25 @@
     }
 }
 
+.clipboard__name {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    font-size: @name-font-size;
+}
+
 //---------- BODY ----------//
 //---------- MEDIA ----------//
 
 @media screen and (max-width: @media_max-width_1){
     .clipboard {
         &.active {
-            padding: 1rem;
+            padding: .5*@glh;
+            padding-top: 2*@glh;
             .clipboard__content {
                 width: 100%;
                 min-height: 100%;
@@ -214,17 +232,10 @@
     }
 }
 
-@media screen and (max-width: @media_max-width_1) {
+@media screen and (max-width: @media_max-width_2) {
     .paper {
         &.active {
             background-image:
-                linear-gradient(
-                    90deg, 
-                    transparent @red-line-focus-left-media-1, 
-                    @red-line-color @red-line-focus-left-media-1,
-                    @red-line-color (@red-line-focus-left-media-1 + @red-line-width), 
-                    transparent (@red-line-focus-left-media-1 + @red-line-width)
-                ),
                 linear-gradient(
                     @grid-color @grid-width, 
                     transparent @grid-width
