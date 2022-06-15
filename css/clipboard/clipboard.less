@@ -42,9 +42,17 @@
 
 @name-font-size: 300%;
 
-@media_max-width_1: 1100px;
-@media_max-width_2: 900px;
-@media_max-width_3: 500px;
+// 100: xxs
+// 300: xs
+// 500: s
+// 700: m
+// 900: l
+// 1100: xl
+@media_max-width_xl: 1100px;
+@media_max-width_l: 900px;
+@media_max-width_m: 800px;
+@media_max-width_s: 500px;
+@media_max-width_xs: 300px;
 
 
 //---------- REUSEABLE ----------//
@@ -68,14 +76,15 @@
 
 .clipboard {
     z-index: 3;
+    left: 50%;
+    top: 50%;
     position: absolute;
-    left: 60%;
-    top: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: @clipboard-width;
-    height: @clipboard-height;
+    // width: @clipboard-width;
+    // height: @clipboard-height;
+    transform: translate(-50%, -50%);
     filter: drop-shadow(0 0 15px black);
     &.active {
         position: fixed; 
@@ -89,6 +98,7 @@
         background: rgba(40,40,40, .5);
         align-items: flex-start;
         padding: 2rem;
+        transform: unset;
         .border {
             border-width: @clipboard-border-focus-width;
         }
@@ -218,7 +228,7 @@
 //---------- BODY ----------//
 //---------- MEDIA ----------//
 
-@media screen and (max-width: @media_max-width_1){
+@media screen and (max-width: @media_max-width_xl){
     .clipboard {
         &.active {
             padding: .5*@glh;
@@ -231,7 +241,7 @@
     }
 }
 
-@media screen and (max-width: @media_max-width_2) {
+@media screen and (max-width: @media_max-width_l) {
     .paper {
         &.active {
             background-image:

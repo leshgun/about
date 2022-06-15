@@ -38,7 +38,7 @@
 .title {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     height: @glh;
 }
 
@@ -197,7 +197,7 @@
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
-        gap: @glh;
+        row-gap: @glh;
     }
     .tile {
         flex-shrink: 1;
@@ -230,7 +230,7 @@
 //---------- BODY ----------//
 //---------- MEDIA ----------//
 
-@media screen and (max-width: @media_max-width_1){
+@media screen and (max-width: @media_max-width_xl){
     .page__head .title{
         text-align: center;
     }
@@ -260,7 +260,7 @@
     }
 }
 
-@media screen and (max-width: @media_max-width_2){
+@media screen and (max-width: @media_max-width_l){
     // .pad-x-1, .px1, 
     // .pad-left-1, .pl1 {
     //     padding: 0;
@@ -323,7 +323,7 @@
     }
 }
 
-@media screen and (max-width: @media_max-width_3){
+@media screen and (max-width: @media_max-width_s){
     .bookmarks {
         width: 100%;
     }

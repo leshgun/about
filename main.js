@@ -13,7 +13,7 @@ const bookmarksAndPages = [...bookmarks].reduce((a, bm, i) => {
 const initialPage = [bookmarks[0], pages[0]]
 
 const clipboadrdActiveList = [clipboard, clipboard_content, ...clipboard_papers];
-const blurList = [cork_board, hobby, main_photo, clipboard]
+const blurList = [cork_board, hobby, clipboard]
 
 
 /**

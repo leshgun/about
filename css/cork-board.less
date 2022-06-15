@@ -1,7 +1,11 @@
 @background-image: url("../img/background.png");
+@clip-image: url("../img/clip.png");
 
-@wrapper-width: 1500px;
-@wrapper-padding: 1rem 0;
+@wrapper-width: 1400px;
+@wrapper-padding: 1rem;
+
+@hobby-image-max-width: 16rem;
+@hobby-iamge-margin: 1rem;
 
 
 
@@ -54,6 +58,18 @@ body,html {
     filter: blur(10px);
 }
 
+.bottom-0, .b-0 {
+    bottom: 0;
+}
+
+.image-rot-1, .ir-1 {
+    transform: rotate(3deg);
+}
+
+.image-rot-min-1, .ir-m1 {
+    transform: rotate(-3deg);
+}
+
 //---------- REUSEABLE ----------//
 //---------- BODY ----------//
 
@@ -85,14 +101,40 @@ body,html {
     }
     .wrapper {
         position: relative;
-        padding: @wrapper-padding;
+        // padding: @wrapper-padding;
         width: @wrapper-width;
         height: 100%;
+        .clip {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            z-index: 2;
+            width: 3rem;
+            height: 3rem;
+            transform: translateX(-50%);
+        }
         .hobby {
             height: 100%;
-            * {
+            >* {
                 position: absolute;
                 z-index: 2;
+                margin: @hobby-iamge-margin;
+                .hobby__image {
+                    max-width: @hobby-image-max-width;
+                }
+            }
+            // img::after {
+            //     background-image: @clip-image;
+            //     content: " ";
+            //     position: absolute;
+            //     left: -16px;
+            //     top: -6px;
+            //     height:20px;
+            //     width: 16px;
+            //     z-index: 100;
+            // }
+            :nth-child(2n){
+                right: 0;
             }
         }
         #main_photo {
@@ -105,13 +147,6 @@ body,html {
                 position: relative;
                 max-width: 100%;
                 transform: rotate(4deg);
-            }
-            .clip {
-                position: absolute;
-                top: 0;
-                left: 45%;
-                z-index: 2;
-                transform: scale(60%);
             }
         }
     }
