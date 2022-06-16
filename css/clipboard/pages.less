@@ -287,8 +287,8 @@
             width: 100%;
         }
         .photo {
+            justify-content: flex-end;
             display: flex;
-            justify-content: center;
         }
         .about{
             padding: 0 @glh;
@@ -326,11 +326,15 @@
 @media screen and (max-width: @media_max-width_s){
     .bookmarks {
         width: 100%;
+        .bm {
+            justify-content: center;
+        }
     }
     .page__head {
         .title {
             text-align: center;
             overflow: hidden;
+            padding: 0 @glh;
         }
         .about {
             display: flex;

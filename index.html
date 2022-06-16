@@ -6,6 +6,7 @@
     <title>It's all about me</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href='https://fonts.googleapis.com/css?family=Iceberg' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <link rel="stylesheet/less" type="text/css" href="css/style.less">
     <!-- <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'> -->
     <script src="https://kit.fontawesome.com/5ff3b0221d.js" crossorigin="anonymous"></script>
@@ -16,6 +17,10 @@
     <div id="root">
         <div id="cork_board"></div>
         <div class="wrapper">
+            <div id="language_switch">
+                <div class="lang lang_eng">Eng</div>
+                <div class="lang lang_rus">Rus</div>
+            </div>
             <div class="hobby">
                 <div class="">
                     <img src="img/clip.png" class="clip">
@@ -46,15 +51,22 @@
                         <div class="paper">
                             <div class="pages">
                                 <div class="bookmarks col-gap-1">
-                                    <div id="bm_info" class="bm lh1">Info</div>
-                                    <div id="bm_educ" class="bm lh1">Education</div>
-                                    <div id="bm_work" class="bm lh1">Work</div>
+                                    <div id="bm_info" class="bm lh1">
+                                        <span class="lang_eng">Info</span>
+                                        <span class="lang_rus">Инфо</span>
+                                    </div>
+                                    <div id="bm_educ" class="bm lh1">
+                                        <span class="lang_eng">Education</span>
+                                        <span class="lang_rus">Образование</span>
+                                    </div>
+                                    <div id="bm_work" class="bm lh1">
+                                        <span class="lang_eng">Work</span>
+                                        <span class="lang_rus">Работа</span>
+                                    </div>
                                 </div>
                                 <div id="page_info" class="page">
                                     <div class="page__head">
-                                        <div class="title fsx2">
-                                            <div>Alexey Noga</div>
-                                        </div>
+                                        <div class="title fsx2">Alexey Noga</div>
                                         <div class="photo profile_photo">
                                             <img src="img/me.png">
                                         </div>
@@ -407,7 +419,10 @@
                         <div class="paper"></div>
                         <div class="paper"></div>
                     </div>
-                    <div class="clipboard__name">Dossier</div>
+                    <div class="clipboard__name">
+                        <span class="lang_eng">Portfolio</span>
+                        <span class="lang_rus">Портфолио</span>
+                    </div>
                 </div>
             </div>
         </div>

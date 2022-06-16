@@ -1,6 +1,9 @@
 'use strict'
 
 const cork_board = document.getElementById("cork_board");
+const language_switch = document.getElementById("language_switch")
+const lang_eng = document.querySelectorAll(".lang_eng");
+const lang_rus = document.querySelectorAll(".lang_rus");
 const hobby = document.querySelector(".hobby");
 const clipboard = document.querySelector(".clipboard");
 const clipboard_content = clipboard.querySelector(".clipboard__content");
@@ -13,7 +16,7 @@ const bookmarksAndPages = [...bookmarks].reduce((a, bm, i) => {
 const initialPage = [bookmarks[0], pages[0]]
 
 const clipboadrdActiveList = [clipboard, clipboard_content, ...clipboard_papers];
-const blurList = [cork_board, hobby, clipboard]
+const blurList = [cork_board, language_switch, hobby, clipboard]
 
 
 /**
@@ -55,6 +58,17 @@ function deactivateOther(node, list) {
     deactivateOther(page, pages);
 }
 
+function languageSwitchActivate() {
+    lang_rus.forEach(toggleActive);
+    language_switch.addEventListener("click", (e) => {
+        lang_eng.forEach(toggleActive);
+        lang_rus.forEach(toggleActive);
+        // language_switch.children.forEach(toggleActive);
+
+        // console.log(e.target);
+    })
+}
+
 /**
  * Popup clipboard when click
  */
@@ -77,6 +91,7 @@ function clipboardActivate() {
 }
     
 function main() {
+    languageSwitchActivate();
     clipboardActivate();
 }
 
