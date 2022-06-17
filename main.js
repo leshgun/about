@@ -16,7 +16,12 @@ const bookmarksAndPages = [...bookmarks].reduce((a, bm, i) => {
 const initialPage = [bookmarks[0], pages[0]]
 
 const clipboadrdActiveList = [clipboard, clipboard_content, ...clipboard_papers];
-const blurList = [cork_board, language_switch, hobby, clipboard]
+const blurList = [
+    // language_switch, 
+    cork_board, 
+    hobby, 
+    clipboard
+]
 
 
 /**
@@ -24,6 +29,10 @@ const blurList = [cork_board, language_switch, hobby, clipboard]
  */
 function toggleActive(node) {
     node.classList.toggle("active");
+}
+
+function toggleSelected(node) {
+    node.classList.toggle("selected");
 }
 
 /**
@@ -59,10 +68,10 @@ function deactivateOther(node, list) {
 }
 
 function languageSwitchActivate() {
-    lang_rus.forEach(toggleActive);
+    lang_rus.forEach(toggleSelected);
     language_switch.addEventListener("click", (e) => {
-        lang_eng.forEach(toggleActive);
-        lang_rus.forEach(toggleActive);
+        lang_eng.forEach(toggleSelected);
+        lang_rus.forEach(toggleSelected);
         // language_switch.children.forEach(toggleActive);
 
         // console.log(e.target);

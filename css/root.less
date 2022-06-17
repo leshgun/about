@@ -43,7 +43,7 @@ a {
 }
 
 .lang_eng, .lang_rus {
-    &:not(.active) {
+    &:not(.selected) {
         display: none;
     }
 }
@@ -92,6 +92,7 @@ a {
             border: 3px solid @switch-border-color;
             border-radius: .5rem;
             height: 3rem;
+            z-index: 100;
             .lang {
                 width: 3rem;
                 display: flex;
@@ -101,7 +102,7 @@ a {
                 // padding: .4rem .8rem;
                 cursor: pointer;
                 // height: 100%;
-                &.active {
+                &.selected {
                     border-radius: .5rem;
                     background-color: @switch-active-lang-color;
                 } 
