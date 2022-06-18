@@ -29,24 +29,30 @@
 
 &.page {
     // display: grid;
+    padding-top: 2*@glh;
 }
 
 .page__head {
     // grid-template-columns: repeat(3, 1fr);
     grid-template-columns: auto max-content;
+    grid-template-rows: 3*@glh auto;
     .title {
         grid-column: 1;
+        margin-top: @glh;
     }
     .profile_photo {
         grid-row: 1/3;
         align-self: flex-start;
         justify-self: center;
+        height: auto;
         img {
             // max-width: 80%;
             // height: 50%;
             // grid-column: 3;
             height: @head-height;
-            transform: translateY(-@glh) rotate(-1deg);
+            transform: 
+                translateY(-@glh)
+                rotate(-1deg);
         }
     }
 }
@@ -62,7 +68,7 @@
         height: @grid-line-height;
     }
     .item__name {
-        overflow: hidden;
+        overflow: visible;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
@@ -167,21 +173,30 @@
 //---------- ANIMATIONS ----------//
 //---------- MEDIA ----------//
 
-@media screen and (max-width: @media_max-width_m) {
-    .page__head .profile_photo img {
-        transform: none;
+@media screen and (max-width: @media_max-width_l) {
+    .page__head {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        .photo {
+            justify-content: center;
+            grid-row: 1;
+            grid-column: 1;
+            img {
+                transform: rotate(-1deg);;
+            }
+        }
+        .title {
+            margin-top: 0;
+        }
     }
+}
+
+@media screen and (max-width: @media_max-width_ml) {
     .page__footer {
         height: auto;
         flex-direction: column;
         padding-left: @glh;
         padding-bottom: @glh;
-    }
-}
-
-@media screen and (max-width: @media_max-width_l) {
-    .photo {
-        justify-content: center;
     }
 }
 
