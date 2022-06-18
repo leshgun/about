@@ -6,25 +6,17 @@
 @clipboard-clip-image: url("../img/wood-texture.jpg");
 @clipboard-width: 400px;
 @clipboard-height: 600px;
-// @clipboard-focus-width: @clipboard-width*@clipboard-focus-scale;
-// @clipboard-focus-height: @clipboard-height*@clipboard-focus-scale;
-// @clipboard-focus-scale: 3;
 @clipboard-focus-width: 1000px;
 @clipboard-focus-height: 1400px;
 @clipboard-border-width: .3rem;
-// @clipboard-border-focus-width: @clipboard-border-width*@clipboard-focus-scale;
 @clipboard-border-focus-width: .5rem;
 @clipboard-border-radius: 3%/2%;
 
 @clip-margin-top: 2%;
 
 @papers-padding-top: 6%;
-// @paper-width: @clipboard-focus-width * .9;
-// @paper-height: @clipboard-focus-height * .9;
 @paper-width: 90%;
 @paper-height: 90%;
-// @paper-height: floor(((@clipboard-focus-height * .9) / @grid-line-height)) 
-//     * @grid-line-height;
 
 @red-line-color: @color-white-blue;
 @red-line-left: 60px;
@@ -144,14 +136,9 @@
     height: 7%;
     border-radius: 25%;
     z-index: 5;
-    filter: drop-shadow(2px 4px 6px black)
+    filter: 
+        drop-shadow(2px 4px 6px black)
         grayscale(.3);
-    // filter: brightness(.8);
-    // background-position: left top;
-    // background-color: silver;
-    // filter: gray saturate(0%) brightness(70%) contrast(1000%);
-    // background: -webkit-linear-gradient(left,  #0f182b 0%,#2a3b53 33%,#2a3b53 66%,#0f182b 100%);
-
 }
 
 .papers {
@@ -177,12 +164,10 @@
 }
 
 .paper {
-    // padding-bottom: @paper-padding-top;
     width: @paper-width;
     height: @paper-height;
     position: absolute;
     border: 1px rgba(0, 0, 0, .5) outset;
-    // background-color: rgb(255, 250, 213);
     background-color: #fff;
     background-image:
         linear-gradient(
@@ -251,24 +236,11 @@
     }
 }
 
-// @media screen and (max-width: @media_max-width_l) {
-//     .paper {
-//         &.active {
-//             background-image:
-//                 linear-gradient(
-//                     @grid-color @grid-width, 
-//                     transparent @grid-width
-//                 );
-//             width: 90%;
-//         }
-//     }
-// }
-
 //---------- MEDIA ----------//
+//---------- IMPORTS (ENCAPSULATED) ----------//
 
-// .page:not(.active) {
-//     display: none;
-// }
 .pages {
     @import "pages.less";
 }
+
+//---------- IMPORTS ----------//
