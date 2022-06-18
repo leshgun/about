@@ -1,0 +1,203 @@
+// @head-height-lines: 12;
+// @content-height-lines: 20;
+// @footer-height-lines: 2;
+
+@head-title-font-size: @grid-line-height*@font-size-scale*2;
+@head-title-grid-height: 5*@grid-line-height;
+@head-title-margin-top: 2*@grid-line-height;
+
+@content-title-padding: @grid-line-height;
+@content-title-font-size: @grid-line-height*1.3*@font-size-scale;
+
+@footer-padding: @grid-line-height 2rem;
+
+@about-grid-height: @grid-line-height;
+
+@tile-list-font-size: .5*@grid-line-height;
+
+@progress-value-color: #1ed300;
+@progress-value-90-color: #8ED100;
+@progress-value-80-color: #b6d300;
+@progress-value-70-color: #d1e302;
+@progress-value-60-color: #e3da02;
+@progress-value-50-color: #eecc00;
+@progress-value-0-color: #ee6b00;
+
+
+
+//---------- BODY ----------//
+
+&.page {
+    // display: grid;
+    padding-top: 2*@glh;
+}
+
+.page__head {
+    // grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: auto max-content;
+    grid-template-rows: 3*@glh auto;
+    .title {
+        grid-column: 1;
+        margin-top: @glh;
+    }
+    .profile_photo {
+        grid-row: 1/3;
+        align-self: flex-start;
+        justify-self: center;
+        height: auto;
+        img {
+            // max-width: 80%;
+            // height: 50%;
+            // grid-column: 3;
+            height: @head-height;
+            transform: 
+                translateY(-@glh)
+                rotate(-1deg);
+        }
+    }
+}
+
+.page__content {
+    .list {
+        font-size: @tile-list-font-size;
+    }
+    .list__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: @grid-line-height;
+    }
+    .item__name {
+        overflow: visible;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    >.title {
+        line-height: 1;
+    }
+}
+
+.page__footer {
+    height: @footer-height;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    .link {
+        height: @grid-line-height;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: .5rem;
+    }
+}
+
+//---------- BODY ----------//
+//---------- PROGRESS BAR ----------//
+
+.progress {
+    background: rgba(0,0,0,0.1);
+    width: 100%;
+    height: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.progress-value {
+    animation: load 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    background: @progress-value-color;
+    height: 5px;
+    width: 0;
+}
+
+.progress-value-90 {
+    animation-name: load-90;
+    background: @progress-value-90-color;
+}
+
+.progress-value-80 {
+    animation-name: load-80;
+    background: @progress-value-80-color;
+}
+
+.progress-value-70 {
+    animation-name: load-70;
+    background: @progress-value-70-color;
+}
+
+.progress-value-60 {
+    animation-name: load-60;
+    background: @progress-value-60-color;
+}
+
+.progress-value-50 {
+    animation-name: load-50;
+    background: @progress-value-50-color;
+}
+
+//---------- PROGRESS BAR ----------//
+//---------- ANIMATIONS ----------//
+
+@keyframes load {
+    0% { width: 0; background-color: @progress-value-0-color; }
+    100% { width: 100%; }
+}
+
+@keyframes load-90 {
+    0% { width: 0; background-color: @progress-value-0-color; }
+    100% { width: 90%; }
+}
+
+@keyframes load-80 {
+    0% { width: 0; background-color: @progress-value-0-color; }
+    100% { width: 80%; }
+}
+
+@keyframes load-70 {
+    0% { width: 0; background-color: @progress-value-0-color; }
+    100% { width: 70%; }
+}
+
+@keyframes load-60 {
+    0% { width: 0; background-color: @progress-value-0-color; }
+    100% { width: 60%; }
+}
+
+@keyframes load-50 {
+    0% { width: 0; background-color: @progress-value-0-color; }
+    100% { width: 50%; }
+}
+
+//---------- ANIMATIONS ----------//
+//---------- MEDIA ----------//
+
+@media screen and (max-width: @media_max-width_l) {
+    .page__head {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        .photo {
+            justify-content: center;
+            grid-row: 1;
+            grid-column: 1;
+            img {
+                transform: rotate(-1deg);;
+            }
+        }
+        .title {
+            margin-top: 0;
+        }
+    }
+}
+
+@media screen and (max-width: @media_max-width_ml) {
+    .page__footer {
+        height: auto;
+        flex-direction: column;
+        padding-left: @glh;
+        padding-bottom: @glh;
+    }
+}
+
+//---------- MEDIA ----------//

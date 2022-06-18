@@ -5,353 +5,516 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>It's all about me</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href='https://fonts.googleapis.com/css?family=Iceberg' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <link rel="stylesheet/less" type="text/css" href="css/style.less">
     <!-- <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'> -->
-    <script src="https://kit.fontawesome.com/a49e836794.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5ff3b0221d.js" crossorigin="anonymous"></script>
     <script src="less.js" type="text/javascript"></script>
     <script src='main.js' defer></script>
 </head>
 <body>
-    <aside>
-        <div class="aside-toggle">
-            <i id="aside-toggle-icon" class="fas fa-arrow-left"></i>
-        </div>
-        <img src="img/kapibara.jpg" alt="Lol...">
-        <nav>
-            <ul>
-                <!-- <li class="nav__item">
-                    <a href="#">About</a>
-                </li> -->
-                <li class="nav__item">
-                    <a href="https://github.com/leshgun/">Projects</a>
-                </li>
-                <li>
-                    <a class="nav__item">Links</i></a>
-                </li>
-                <!-- <li class="nav__item">
-                    <a href="https://habr.com/">Blog</a>
-                </li> -->
-            </ul>
-        </nav>
-        <div class="profile">
-            <!-- <img src="https://vsezhivoe.ru/wp-content/uploads/2021/02/капибара-грызун.jpg"> -->
-            <!-- <img src="https://pbs.twimg.com/media/E1Pt6EiXsAI20wB?format=jpg&name=900x900"> -->
-            <div class="prof-item">
-                <span class="prof-item_name">Имя:</span>
-                <span class="prof-item_value">Нога Алексей Игоревич</span>
+    <div id="root">
+        <div id="cork_board"></div>
+        <div class="wrapper">
+            <div id="language_switch">
+                <div class="lang lang_eng">Eng</div>
+                <div class="lang lang_rus">Rus</div>
             </div>
-            <div class="prof-item">
-                <span class="prof-item_name">Возраст:</span>
-                <span class="prof-item_value">23</span>
+            <div class="hobby">
+                <div class="">
+                    <img src="img/clip.png" class="clip">
+                    <img src="img/bike.png" class="hobby__image ir-m1">
+                </div>
             </div>
-            <div class="prof-item">
-                <span>Email:</span>
-                <span>nogalexey@gmail.com</span>
-            </div>
-            <div class="prof-item">
-                <span>Город:</span>
-                <span>Калининград</span>
-            </div>
-            <div class="prof-item">
-                <span>Специальность:</span>
-                <span>Специалист по зищите информации / Программист</span>
-            </div>
-        </div>
-    </aside>
-    <div id="wrapper">
-        <main>
-            <div class="tile tile-100">
-                <span class="tile-name">Обо мне</span>
-                <div class="tile-content">
-                    <div class="tile-item">
-                        Я - начинающий специалист по защите информации с хорошими 
-                        знаниями в этой области и отличной теоретической базой. 
-                        Ежедневно чему-то новому в области компьютерной 
-                        безопасности. Могу работать как самостоятельно на удалёнке, 
-                        так и в команде в офисе. Умею работать в коллективе и 
-                        склонен к профессиональному развитию.
-                        <br>
-                        <br>
-                        Нахожусь в поиске работы или стажировки в Калининграде, 
-                        но также рассматриваю варианты и удалённой работы.
-                        <br>
-                        <br>
-                        Девиз: "Отличный специалист не тот, кто всё знает, 
-                        а тот, кто знает где это найти".
+            <!-- <div id="main_photo">
+                <img src="img/clip.png" class="clip">
+                <img src="img/kapibara.jpg" class="photo">
+            </div> -->
+            <div class="clipboard">
+                <div class="clipboard__content">
+                    <div class="border"></div>
+                    <div class="clipboard__clip"></div>
+                    <div class="papers">
+                        <div class="paper">
+                            <div class="pages">
+                                <div class="bookmarks col-gap-1">
+                                    <div id="bm_info" class="bm lh1">
+                                        <span class="lang_eng">Info</span>
+                                        <span class="lang_rus">Инфо</span>
+                                    </div>
+                                    <div id="bm_educ" class="bm lh1">
+                                        <span class="lang_eng">Education</span>
+                                        <span class="lang_rus">Образование</span>
+                                    </div>
+                                    <div id="bm_work" class="bm lh1">
+                                        <span class="lang_eng">Work</span>
+                                        <span class="lang_rus">Работа</span>
+                                    </div>
+                                </div>
+                                <div id="page_info" class="page">
+                                    <div class="page__head">
+                                        <div class="title fsx2">
+                                            <span class="lang_eng">Alexey Noga</span>
+                                            <span class="lang_rus">Алексей Нога</span>
+                                        </div>
+                                        <div class="photo profile_photo">
+                                            <img src="img/me.png">
+                                        </div>
+                                        <div class="about pad-x-1">
+                                            <div class="item">
+                                                <span class="item__name lang_eng">Age:</span>
+                                                <span class="item__name lang_rus">Возраст</span>
+                                                <span class="item__value">23</span>
+                                            </div>
+                                            <div class="item">
+                                                <span class="item__name lang_eng">City:</span>
+                                                <span class="item__name lang_rus">Город:</span>
+                                                <span class="item__value lang_eng">Kaliningrad</span>
+                                                <span class="item__value lang_rus">Калининград</span>
+                                            </div>
+                                            <div class="item">
+                                                <span class="item__name lang_eng">Languages:</span>
+                                                <span class="item__name lang_rus">Языки:</span>
+                                                <span class="item__value lang_eng">Russian (native)<br/>English (B1-B2)</span>
+                                                <span class="item__value lang_rus">Русский (родной)<br/>Английский (B1-B2)</span>
+                                            </div>
+                                            <!-- <div class="item">
+                                                <span class="item__name"></span>
+                                                <span class="item__value">English (B2-C1)</span>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                    <div class="page__content col-gap-1">
+                                        <div class="lang_rus">
+                                            <p class="px-1">
+                                                Я - начинающий специалист по защите информации с хорошими 
+                                                знаниями в этой области и отличной теоретической базой. 
+                                                Ежедневно чему-то новому в области компьютерной 
+                                                безопасности. Могу работать как самостоятельно на удалёнке, 
+                                                так и в команде в офисе. Умею работать в коллективе и 
+                                                склонен к профессиональному развитию.
+                                            </p>
+                                            <p class="px-1">
+                                                Также развиваюсь в области web-разработки.
+                                                Были реализованы некоторые проекты на ReactJS и Django.
+                                                На данный момент приоритет разработки нацелен на фреймворки 
+                                                для языка программирования Java-Script.
+                                            </p>
+                                            <p class="px-1">
+                                                Нахожусь в поиске работы или стажировки в Калининграде, 
+                                                но также рассматриваю варианты и удалённой работы.
+                                            </p>
+                                        </div>
+                                        <div class="tiles pad-x-1">
+                                            <div class="tile">
+                                                <div class="title">
+                                                    <span class="lang_eng">Web development</span>
+                                                    <span class="lang_rus">Web-разработка</span>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">HTML5 / CSS3 (less)</div>
+                                                            <div class="item__value">100%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">Java-Script</div>
+                                                            <div class="item__value">90%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value progress-value-90"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">React JS</div>
+                                                            <div class="item__value">80%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value progress-value-80"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">Figma</div>
+                                                            <div class="item__value">80%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value progress-value-80"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">Django</div>
+                                                            <div class="item__value">70%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value progress-value-70"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tile">
+                                                <div class="title">
+                                                    <span class="lang_eng">Security</span>
+                                                    <span class="lang_rus">Безопасность</span>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">HTTP(-S)</div>
+                                                            <div class="item__value">100%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">OWASP top 10</div>
+                                                            <div class="item__value">90%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value progress-value-90"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">VipNet / Dallas Lock / UserGate</div>
+                                                            <div class="item__value">90%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value progress-value-90"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tile">
+                                                <div class="title">
+                                                    <span class="lang_eng">Software Development</span>
+                                                    <span class="lang_rus">Языки программирования</span>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">Python</div>
+                                                            <div class="item__value">100%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">C / C++</div>
+                                                            <div class="item__value">80%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value progress-value-80"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">Java</div>
+                                                            <div class="item__value">60%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value progress-value-60"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tile">
+                                                <div class="title">
+                                                    <span class="lang_eng">Databases</span>
+                                                    <span class="lang_rus">Базы данных</span>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">SQL</div>
+                                                            <div class="item__value">100%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">Oracle</div>
+                                                            <div class="item__value">90%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value progress-value-90"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">MsSQL</div>
+                                                            <div class="item__value">70%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value progress-value-70"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">PostgreSQL</div>
+                                                            <div class="item__value">50%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value progress-value-50"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tile">
+                                                <div class="title">
+                                                    <span class="lang_eng">System & Networking</span>
+                                                    <span class="lang_rus">Другие технологии</span>
+                                                </div>
+                                                <div class="list">
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">Git / GitHub</div>
+                                                            <div class="item__value">100%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name lang_eng">(Windows / Linux) Administration</div>
+                                                            <div class="item__name lang_rus">(Windows / Linux) Администрирование</div>
+                                                            <div class="item__value">90%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value progress-value-90"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list__item">
+                                                        <div class="item frsb">
+                                                            <div class="item__name">Cisco</div>
+                                                            <div class="item__value">80%</div>
+                                                        </div>
+                                                        <div class="progress">
+                                                            <div class="progress-value progress-value-80"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="page__footer">
+                                        <div class="link">
+                                            <i class="fa-solid fa-envelope"></i>
+                                            <a>nogalexey@gmail.com</a>
+                                        </div>
+                                        <div class="link">
+                                            <i class="fa-brands fa-vk"></i>
+                                            <a target="_blank" rel="noopener noreferrer" href="https://vk.com/nogalexey">vk.com/nogalexey</a>
+                                        </div>
+                                        <div class="link">
+                                            <i class="fa-brands fa-github"></i>
+                                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/leshgun">github.com/leshgun</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="page_educ" class="page">
+                                    <div class="page__head">
+                                        <div class="title fsx2">
+                                            <span class="lang_eng">University</span>
+                                            <span class="lang_rus">Университет</span>
+                                            <!-- <span class="lang_eng">Baltic Federal University</span>
+                                            <span class="lang_rus">Балтийский Федеральный Университет</span> -->
+                                        </div>
+                                        <div class="about pad-left-1">
+                                            <div class="item">
+                                                <span class="item__name lang_eng">Place:</span>
+                                                <span class="item__name lang_rus">Место:</span>
+                                                <span class="item__value lang_eng">Immanuel Kant Baltic Federal University</span>
+                                                <span class="item__value lang_rus">Балтийский Федеральный Университет имени Иммануила Канта</span>
+                                            </div>
+                                            <div class="item">
+                                                <span class="item__name lang_eng">Date:</span>
+                                                <span class="item__name lang_rus">Когда:</span>
+                                                <span class="item__value">2016-2022</span>
+                                            </div>
+                                            <div class="item">
+                                                <span class="item__name lang_eng">Degree:</span>
+                                                <span class="item__name lang_rus">Степень:</span>
+                                                <span class="item__value lang_eng">Specialist</span>
+                                                <span class="item__value lang_rus">Специалист</span>
+                                            </div>
+                                            <div class="item">
+                                                <span class="item__name lang_eng">Speciality:</span>
+                                                <span class="item__name lang_rus">Специальность:</span>
+                                                <span class="item__value lang_eng">Computer Security</span>
+                                                <span class="item__value lang_rus">Компьютерная безопасность</span>
+                                            </div>
+                                            <div class="item">
+                                                <span class="item__name lang_eng">Result:</span>
+                                                <span class="item__name lang_rus">Итог:</span>
+                                                <span class="item__value lang_eng">Diploma with Distinction</span>
+                                                <span class="item__value lang_rus">Окончил с отличием</span>
+                                            </div>
+                                        </div>
+                                        <div class="photo">
+                                            <img class="img-tran-x-1" src="img/bfu.png">
+                                        </div>
+                                    </div>
+                                    <div class="page__content col-gap-1">
+                                        <div class="title">
+                                            <span class="lang_eng">Acquired Skills</span>
+                                            <span class="lang_rus">Приобретённые навыки</span>
+                                        </div>
+                                        <div class="tiles px1">
+                                            <div class="tile">
+                                                <div class="title fjcl">
+                                                    <span>Security:</span>
+                                                </div>
+                                                <ul class="lang_eng">
+                                                    <li>Protecting programs and data</li>
+                                                    <li>Fundamentals of information Security</li>
+                                                    <li>Theory of encoding, compression and recovery of information</li>
+                                                    <li>Computer network security model</li>
+                                                    <li>Protection in operating systems</li>
+                                                    <li>Organizational and legal support of information security</li>
+                                                    <li>Cryptography and cryptographic algorithms</li>
+                                                    <li>Cryptographic protocols to protect banking information</li>
+                                                    <li>External security audit of corporate networks</li>
+                                                </ul>
+                                                <ul class="lang_rus">
+                                                    <li>Защита программ и данных</li>
+                                                    <li>Основы информационной безопасности</li>
+                                                    <li>Теория кодирования, сжатия и восстановления информации</li>
+                                                    <li>Модели безопасности компьютерных сетей</li>
+                                                    <li>Защита в операционных системах</li>
+                                                    <li>Организационное и правовое обеспечение ИБ</li>
+                                                    <li>Криптография и криптографические алгоритмы</li>
+                                                    <li>Криптографические протоколы для защиты банковской информации</li>
+                                                    <li>Внешний аудит безопасности корпоративных сетей</li>
+                                                </ul>
+                                            </div>
+                                            <div class="tile">
+                                                <div class="title fjcl">
+                                                    <span>Software Development:</span>
+                                                </div>
+                                                <ul class="lang_eng">
+                                                    <li>Python (Scripts, API, SageMath, ...)</li>
+                                                    <li>C / C++ (WinCrypt.h, ...)</li>
+                                                    <li>Machine learning (Number recogition)</li>
+                                                    <li>Linux administration</li>
+                                                    <li>Cisco (CCNA-1, CCNA-2)</li>
+                                                    <li>SQL (Mssql, PostgreSQL)</li>
+                                                    <li>Oracle DB administration</li>
+                                                    <li>Microcontroller programming</li>
+                                                </ul>
+                                                <ul class="lang_rus">
+                                                    <li>Python (Scripts, API, SageMath, ...)</li>
+                                                    <li>C / C++ (WinCrypt.h, ...)</li>
+                                                    <li>Machine learning (распознование рукописных чисел)</li>
+                                                    <li>Администрирование Linux</li>
+                                                    <li>Cisco (CCNA-1, CCNA-2)</li>
+                                                    <li>SQL (Mssql, PostgreSQL)</li>
+                                                    <li>Администрирование БД Oracle</li>
+                                                    <li>Программирование микроконтролерров</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="page__footer"></div>
+                                </div>
+                                <div id="page_work" class="page">
+                                    <div class="page__head">
+                                        <div class="title fsx2">
+                                            <span class="lang_eng">Municipal District Administration</span>
+                                            <span class="lang_rus">Администрация муниципального округа</span>
+                                        </div>
+                                        <div class="about pad-left-1">
+                                            <div class="item">
+                                                <span class="item__name lang_eng">Date:</span>
+                                                <span class="item__name lang_rus">Дата:</span>
+                                                <span class="item__value">2021-2022</span>
+                                            </div>
+                                            <div class="item">
+                                                <span class="item__name lang_eng">Position:</span>
+                                                <span class="item__name lang_rus">Должность:</span>
+                                                <span class="item__value lang_eng">System Administrator</span>
+                                                <span class="item__value lang_rus">Системный администратор</span>
+                                            </div>
+                                            <div class="item">
+                                                <span class="item__name lang_eng">Place:</span>
+                                                <span class="item__name lang_rus">Где:</span>
+                                                <span class="item__value lang_eng">Administration of Guryevsk</span>
+                                                <span class="item__value lang_rus">Администрация Гурьевского муниципального округа</span>
+                                            </div>
+                                        </div>
+                                        <div class="photo">
+                                            <img class="img-tran-x-1" src="img/adm_gur.png">
+                                        </div>
+                                    </div>
+                                    <div class="page__content col-gap-1">
+                                        <div class="tiles px1">
+                                            <div class="tile">
+                                                <div class="title fjcl">
+                                                    <span class="lang_eng">Responsibilities:</span>
+                                                    <span class="lang_rus">Обязанности:</span>
+                                                </div>
+                                                <ul class="lang_eng">
+                                                    <li>Local network monitoring</li>
+                                                    <li>Maintenance of the functioning of terminal and intermediate divices</li>
+                                                    <li>Installation of new hardware and software</li>
+                                                    <li>Installing and maintaining servers based on the Windows Server operation system</li>
+                                                </ul>
+                                                <ul class="lang_rus">
+                                                    <li>Мониторинг локальных сетей</li>
+                                                    <li>Сопровождение функционирования оконечных и промежуточных устройств</li>
+                                                    <li>Установка нового оборудования и ПО</li>
+                                                    <li>Установка и поддержание серверов на базе операционной системы Windows Server</li>
+                                                </ul>
+                                            </div>
+                                            <div class="tile">
+                                                <div class="title fjcl">
+                                                    <span class="lang_eng">Achievements:</span>
+                                                    <span class="lang_rus">Ключевые достижения:</span>
+                                                </div>
+                                                <ul class="lang_eng">
+                                                    <li>Inplementation, configuration and maintenance of information security software</li>
+                                                    <li>VipNet, DallasLock, UserGate</li>
+                                                    <li>Network security monitoring</li>
+                                                    <li>Maintenance of intrusion detection systems</li>
+                                                </ul>
+                                                <ul class="lang_rus">
+                                                    <li>Внедрение, настройка и сопровождение ПО по защите информации</li>
+                                                    <li>VipNet, DallasLock, UserGate</li>
+                                                    <li>Мониторинг безопасности сети</li>
+                                                    <li>Сопровождение средст обнаружения вторжений</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="page__footer"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paper"></div>
+                        <div class="paper"></div>
+                    </div>
+                    <div class="clipboard__name">
+                        <span class="lang_eng">Portfolio</span>
+                        <span class="lang_rus">Портфолио</span>
                     </div>
                 </div>
             </div>
-            <div class="tile tile-100">
-                <span class="tile-name">Навыки</span>
-                <div class="tile-content">
-                    <div class="tile-item">
-                        <div class="tile-item_head">
-                            <div class="tile-item_name">
-                                <div>Web</div>
-                            </div>
-                        </div>
-                        <div class="tile-item_list">
-                            Бла-бла-бла
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tile tile-50">
-                <span class="tile-name">Образование</span>
-                <ul class="tile-content">
-                    <li class="tile-item">
-                        <div class="tile-item_head">
-                            <div class="tile-item_name">
-                                <div>
-                                    БФУ им. И. Канта
-                                </div>
-                                <div>
-                                    Компьютерная безопасность
-                                </div>
-                                <div>
-                                    Окончил с отличием
-                                </div>
-                            </div>
-                            <div class="tile-item_date">
-                                2016-2022
-                            </div>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Дисциплины:</span>
-                            <ul>
-                                <li>Математическая логика</li>
-                                <li>Основы информационной безопасности</li>
-                                <li>СУБД</li>
-                                <li>Электроника и схемотехника</li>
-                                <li>Теория кодирования, сжатия и восстановления информации</li>
-                                <li>Модели безопасности компьютерных сетей</li>
-                                <li>Защита в операционных системах</li>
-                                <li>Защита программ и данных</li>
-                                <li>Организационное и правовое обеспечение ИБ</li>
-                                <li>Криптография и криптографические алгоритмы</li>
-                                <li>Криптографические протоколы для защиты банковской информации</li>
-                                <li>Внешний аудит безопасности корпоративных сетей</li>
-                            </ul>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Ключевые особенности:</span>
-                            <ul>
-                                <li>Linux administration</li>
-                                <li>Cisco CCNA-1 и CCNA-2</li>
-                                <li>Oracle DataBase</li>
-                                <li>MSSQL</li>
-                                <li>Python scripts</li>
-                                <li>Sagemath</li>
-                                <li>C/C++</li>
-                                <li>API</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="tile-item">
-                        <div class="tile-item_head">
-                            <div class="tile-item_name">
-                                <div>
-                                    Летняя школа по Компьютерной безопасности
-                                </div>
-                                <div>
-                                    Участник
-                                </div>
-                            </div>
-                            <div class="tile-item_date">
-                                август 2021
-                            </div>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Приобретённые навыки:</span>
-                            <ul>
-                                <li>Организация защищённой сети VipNet</li>
-                                <li>
-                                    Методология тестирования защищённости, 
-                                    мониторинг событий ИБ, 
-                                    SIEM-системы ("Эшелон")
-                                </li>
-                                <li>
-                                    Методы блокировки информации на примере 
-                                    DLP- и DCAM-систем ("Сёрчинформ")
-                                </li>
-                                <li>
-                                    Методы быстрой разработки мобильных 
-                                    приложений и обеспечение информационной 
-                                    безопасности в сфере мобильных технологий 
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Ключевые особенности:</span>
-                            <ul>
-                                <li>Получен сертификат администратора сети VipNet</li>
-                                <li>Участие в олимпиаде "Capture the flag"</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="tile-item">
-                        <div class="tile-item_head">
-                            <div class="tile-item_name">
-                                <div>
-                                    Tensor school
-                                </div>
-                                <div>
-                                    React junior developer
-                                </div>
-                            </div>
-                            <div class="tile-item_date">
-                                май 2020
-                            </div>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Приобретённые навыки:</span>
-                            <ul>
-                                <li>
-                                    Основы языка программирования Java-Script
-                                </li>
-                                <li>
-                                    Работа с фреймворком ReactJS (native)
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Ключевые особенности:</span>
-                            <ul>
-                                <li>
-                                    Создание своего приложения на ReactJS
-                                    для парсинга API сайта, построение
-                                    интерфейса динамического отображения данных
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="tile-item">
-                        <div class="tile-item_head">
-                            <div class="tile-item_name">
-                                <div>
-                                    IT school samsung
-                                </div>
-                                <div>
-                                    Java junior developer
-                                </div>
-                            </div>
-                            <div class="tile-item_date">
-                                2015-2016
-                            </div>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Приобретённые навыки:</span>
-                            <ul>
-                                <li>ООП</li>
-                                <li>Основы синтаксиса языка программирования Java-Script</li>
-                                <li>Работа в Android Studio</li>
-                                <li>Жизненный цикл Android-приложения</li>
-                            </ul>
-                        </div>
-                        <div class="tile-item_list">
-                            <span>Ключевые особенности:</span>
-                            <ul>
-                                <li>
-                                    Создание собственного проекта (игры) для мобильного устиройства
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="tile tile-50">
-                <span class="tile-name">Опыт работы</span>
-                <ul class="tile-content">
-                    <li class="tile-item">
-                        <div class="tile-item_head">
-                            <div class="tile-item_name">
-                                <div>
-                                    Системный администратор
-                                </div>
-                                <div>
-                                    МКУ "Спектр"
-                                </div>
-                            </div>
-                            <div class="tile-item_date">
-                                2021-2022
-                            </div>
-                        </div>
-                        <div class="tile-item_list">
-                            <div>
-                                <div>Обязанности:</div>
-                                <ul>
-                                    <li>Мониторинг локальных сетей</li>
-                                    <li>Сопровождение функционирования 
-                                        оконечных и промежуточных устройств</li>
-                                    <li>Установка нового оборудования и ПО</li>
-                                    <li>Работа с ПО государственных органов 
-                                        (gasu.gov.ru, trueconf, ...)</li>
-                                    <li>Установка и поддержание серверов на 
-                                        базе операционной системы 
-                                        Windows Server</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <span>Ключевые достижения:</span>
-                                <ul>
-                                    <li>Внедрение, настройка и сопровождение ПО 
-                                        по защите информации (VipNet, DallasLock, 
-                                        UserGate, ...)</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- <div class="tile-item_list">
-                        </div> -->
-                    </li>
-                </ul>
-            </div>
-            <div class="tile tile-50">
-                <span class="tile-name">Опыт работы</span>
-                <ul class="tile-content">
-                    <li class="tile-item">
-                        <div class="tile-item_head">
-                            <div class="tile-item_name">
-                                <div>
-                                    Системный администратор
-                                </div>
-                                <div>
-                                    МКУ "Спектр"
-                                </div>
-                            </div>
-                            <div class="tile-item_date">
-                                2021-2022
-                            </div>
-                        </div>
-                        <div class="tile-item_list">
-                            <div>
-                                <div>Обязанности:</div>
-                                <ul>
-                                    <li>Мониторинг локальных сетей</li>
-                                    <li>Сопровождение функционирования 
-                                        оконечных и промежуточных устройств</li>
-                                    <li>Установка нового оборудования и ПО</li>
-                                    <li>Работа с ПО государственных органов 
-                                        (gasu.gov.ru, trueconf, ...)</li>
-                                    <li>Установка и поддержание серверов на 
-                                        базе операционной системы 
-                                        Windows Server</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <span>Ключевые достижения:</span>
-                                <ul>
-                                    <li>Внедрение, настройка и сопровождение ПО 
-                                        по защите информации (VipNet, DallasLock, 
-                                        UserGate, ...)</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- <div class="tile-item_list">
-                        </div> -->
-                    </li>
-                </ul>
-            </div>
-        </main>
+        </div>
     </div>
 </body>
 </html>
