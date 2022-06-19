@@ -7,6 +7,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
 
+// 100: xxs
+// 300: xs
+// 500: s
+// 700: m
+// 900: l
+// 1100: xl
+@media_max-width_xl: 1100px;
+@media_max-width_l: 900px;
+@media_max-width_m-l: 800px;
+@media_max-width_m: 700px;
+@media_max-width_s: 500px;
+@media_max-width_xs-s: 400px;
+@media_max-width_xs: 300px;
+@media_max-width_xxs-xs: 200px;
+
 @font-family: 
     'Caveat',
     // 'Iceberg',
@@ -54,9 +69,16 @@
     }
 }
 
-body,html {
+html {
     height: 100%;
 }
+
+body {
+    min-height: 100%;
+    background: #0d1424 url(../img/background.png) no-repeat center top;
+}
+
+
 
 // ---------- GLOBAL ---------- //
 // ---------- IMPORTS ---------- //

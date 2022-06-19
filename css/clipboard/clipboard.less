@@ -33,19 +33,6 @@
 
 @name-font-size: 250%;
 
-// 100: xxs
-// 300: xs
-// 500: s
-// 700: m
-// 900: l
-// 1100: xl
-@media_max-width_xl: 1100px;
-@media_max-width_l: 900px;
-@media_max-width_ml: 800px;
-@media_max-width_m: 700px;
-@media_max-width_s: 500px;
-@media_max-width_xs: 300px;
-
 
 //---------- REUSEABLE ----------//
 
@@ -71,13 +58,12 @@
     left: 50%;
     top: 50%;
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transform: translate(-50%, -50%);
     filter: drop-shadow(0 0 15px black);
     cursor: pointer;
     &.active {
+        display: flex;
+        justify-content: center;
         position: fixed; 
         overflow-y: scroll;
         width: auto;
@@ -95,7 +81,8 @@
             border-width: @clipboard-border-focus-width;
         }
         .clipboard__content {
-            width: @clipboard-focus-width;
+            width: 100%;
+            max-width: @clipboard-focus-width;
             height: @clipboard-focus-height;
         }
         .clipboard__name {
@@ -171,13 +158,6 @@
     background-color: #fff;
     background-image:
         linear-gradient(
-            90deg, 
-            transparent @red-line-left, 
-            @red-line-color @red-line-left,
-            @red-line-color (@red-line-left + @red-line-width), 
-            transparent (@red-line-left + @red-line-width)
-        ),
-        linear-gradient(
             @grid-color @grid-width, 
             transparent @grid-width
         );
@@ -214,7 +194,7 @@
 //---------- MEDIA ----------//
 
 @media screen and (max-width: @media_max-width_xl){
-    .clipboard {
+    &.clipboard {
         &.active {
             padding: .5*@glh;
             padding-top: 2*@glh;
@@ -222,16 +202,73 @@
                 width: 100%;
                 min-height: 100%;
             }
+            .clipboard__clip {
+                border-radius: .2*@glh;
+                width: 90%;
+                height: 2*@glh;
+            }
         }
     }
     .paper {
+        width: 90%;
         &.active {
             background-image:
                 linear-gradient(
                     @grid-color @grid-width, 
                     transparent @grid-width
                 );
-            width: 90%;
+        }
+    }
+}
+
+@media screen and (max-width: @media_max-width_s) {
+    &.clipboard{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        transform: unset;
+        top: 0;
+        left: 0;
+        &.active {
+            padding: @glh 0;
+            .papers {
+                padding-top: 3*@glh;
+                .paper {
+                    width: 100%;
+                }
+            }
+            .clipboard__clip {
+                border-radius: .5*@glh;
+                top: 2*@glh;
+                width: 100%;
+            }
+        }
+        .clipboard__clip {
+            border-radius: .2*@glh;
+        }
+    }
+}
+
+@media screen and (max-width: @media_max-width_xs) {
+    &.clipboard {
+        &.active {
+            .papers {
+                padding-top: 5*@glh;
+            }
+            .clipboard__clip {
+                top: 3.5*@glh;
+            }
+        }
+        .clipboard__content {
+            height: 16rem;
+        }
+        .clipboard__name {
+            font-size: 150%;
+            align-items: flex-start;
+            padding: 2*@glh 0;
+        }
+        .clipboard__clip {
+            height: @glh
         }
     }
 }
