@@ -18,7 +18,7 @@ const initialPage = [bookmarks[0], pages[0]]
 const clipboadrdActiveList = [clipboard, clipboard_content, ...clipboard_papers];
 const blurList = [
     // language_switch, 
-    // cork_board, 
+    cork_board, 
     hobby, 
     clipboard
 ]

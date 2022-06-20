@@ -27,7 +27,7 @@ a {
 //---------- REUSEABLE ----------//
 
 .blur {
-    filter: blur(10px);
+    filter: blur(4px);
 }
 
 .bottom-0, .b-0 {
@@ -62,6 +62,15 @@ a {
         .wrapper >*:not(.active) {
             filter: blur(3px);
         }
+    }
+    #cork_board {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: @background-image;
+        // overflow: hidden;    
     }
     #language_switch {
         position: fixed;
