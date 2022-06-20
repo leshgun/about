@@ -138,6 +138,7 @@
     padding-left: @page-paddinng-left;
     padding-bottom: @glh;
     font-size: @page-font-size;
+    // margin-bottom: 3*@glh;
     // display: grid;
     // grid-template-rows: @head-height @content-height @footer-height;
     // grid-template-rows: min-content;
@@ -148,6 +149,10 @@
     &:not(&.active) {
         visibility: hidden;
         position: absolute;
+        top: 5*@glh;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 }
 
