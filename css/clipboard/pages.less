@@ -149,10 +149,14 @@
     &:not(&.active) {
         visibility: hidden;
         position: absolute;
+        height: 100%;
         top: 5*@glh;
         left: 0;
         right: 0;
         bottom: 0;
+        * {
+            height: 0;
+        }
     }
 }
 
