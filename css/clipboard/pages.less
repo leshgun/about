@@ -38,10 +38,6 @@
 
 //---------- REUSABLES ----------//
 
-// span, p {
-//     line-height: @glh;
-// }
-
 .title {
     display: flex;
     justify-content: center;
@@ -155,10 +151,6 @@
     padding-bottom: @glh;
     font-size: @page-font-size;
     line-height: @page-line-height;
-    // margin-bottom: 3*@glh;
-    // display: grid;
-    // grid-template-rows: @head-height @content-height @footer-height;
-    // grid-template-rows: min-content;
     display: flex;
     flex-direction: column;
     gap: @glh;
@@ -211,7 +203,6 @@
             width: min-content;
             text-align: right;
             img {
-                // max-width: 100%;
                 max-height: 100%;
             }
         }
@@ -228,7 +219,6 @@
         flex-grow: 1;
         width: 35%;
         max-width: 50%;
-        // padding: 0 1rem;
         .tile__text {
             line-height: @glh;
         }
@@ -321,29 +311,7 @@
         }
     }
     .page__item {
-        // grid-template-rows: auto;
-        // grid-template-columns: auto;
-        // height: auto;
-        // >* {
-        //     width: 100%;
-        // }
-        // .title {
-        //     grid-row: 2;
-        //     grid-column: 1;
-        // }
-        // .profile_photo {
-        //     justify-content: flex-end;
-        //     display: flex;
-        //     grid-row: 1;
-        //     grid-column: 1;
-        //     // order: -1;
-        // }
-        // .about{
-        //     grid-row: 3;
-        //     grid-column: 1;
-        // }
         .item__description {
-            // flex-direction: column;
             display: grid;
             grid-template-columns: 1fr;
             justify-items: flex-end;
@@ -370,8 +338,6 @@
 
 @media screen and (max-width: @media_max-width_s) {
     .pad-x-1, .px1 {
-        // padding-left: .5*@glh;
-        // padding-right: .5*@glh;
         padding-left: 0;
         padding-right: 0;
     }
@@ -389,9 +355,6 @@
                 height: 2.5*@glh;
             }
         }
-    }
-    .page {
-        // padding-top: @glh;
     }
     .page__head {
         .title {
@@ -414,7 +377,6 @@
         }
         .photo {
             width: 100%;
-            // height: 3*@glh;
             img {
                 height: auto;
                 transform: translateX(.5*@glh);
